@@ -1,14 +1,14 @@
 /* 
-    OPERADORES ARITMETICOS
+   ORDEM DOS OPERADORES ARITMETICOS
 
-    +
-    -
-    *
-    /
-    %
-
+  ()
+  **
+  * / %
+  + -
+  
 */
 
-const num1 = '5'
-const num2 = 10
-console.log(num1 + num2)
+let cont = 1
+cont++
+
+console.log(cont)
