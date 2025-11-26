@@ -38,4 +38,3 @@ console.log(rodrigo)
 
 console.log(Math.max(5, 50, 10, 20, -10, 100, -100, 30, 40, 22, 20))
 console.log(Math.min(5, -5, 10, -10, 100, -100, 30, -30, 50, -50))
-
