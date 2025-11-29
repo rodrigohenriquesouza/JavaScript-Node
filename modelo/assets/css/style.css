@@ -28,6 +28,11 @@ body {
     
 }
 
+.containerPrinc {
+    padding: 10px;
+}
+
+
 form input, form label, form button {
     display: block;
     width: 100%;
