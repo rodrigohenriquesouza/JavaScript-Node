@@ -1,18 +1,7 @@
-function escopoCodigo() {
+const form = document.querySelector('#form')
 
-    const form = document.querySelector('.form')
+form.addEventListener('submit', function (event) {
+    event.preventDefault() 
+        console.log('Evento previnido')
     
-
-
-    function recebeEventoForm(evento) {
-     evento.preventDefault();
-
-        const peso = form.querySelector('#peso')
-        const altura = form.querySelector('#altura')
-        let imc = peso.value / (altura.value * altura.value)
-        console.log(imc)
-    };
-    form.addEventListener('submit', recebeEventoForm)
-}
-
-escopoCodigo()
+}) 
