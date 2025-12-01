@@ -63,3 +63,8 @@ form button:hover {
 form button:active {
     background-color: red;
 }
+
+.paragrafo-resultado {
+    background: #1ff843;
+    padding: 10px;
+}

@@ -2,16 +2,20 @@ const form = document.querySelector('#form')
 
 form.addEventListener('submit', function (event) {
     event.preventDefault() 
-        console.log('Evento previnido')
-        setResultado('Olá Mundo!')
-    
+    const inputPeso = event.target.querySelector('#peso')
+    const inputAltura = event.target.querySelector('#altura')
 }) 
+
+function criaP () {
+    const p = document.createElement('p')
+    return p
+    
+}
 
 function setResultado(msg) {
     const resultado = document.querySelector('#resultado')
     resultado.innerHTML = ''
-    const p = document.createElement('p')
-    p.classList.add('paragrafo-resultado')
-    p.innerHTML = 'Qualquer coisa'
-    resultado.appendChild(p)
+
+    const p = criaP()
+
 }
