@@ -9,5 +9,8 @@ form.addEventListener('submit', function (event) {
 
 function setResultado(msg) {
     const resultado = document.querySelector('#resultado')
-    resultado.innerHTML = msg
+    resultado.innerHTML = ''
+    const p = document.createElement('p')
+    p.innerHTML = 'Qualquer coisa'
+    resultado.appendChild(p)
 }
