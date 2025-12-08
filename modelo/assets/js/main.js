@@ -45,7 +45,6 @@ function getImc(peso, altura) {
 function criaP () {
     const p = document.createElement('p')
     return p
-    
 }
 
 function setResultado(msg, isValid) {
