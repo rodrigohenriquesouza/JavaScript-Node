@@ -4,6 +4,13 @@ form.addEventListener('submit', function (event) {
     event.preventDefault() 
     const inputPeso = event.target.querySelector('#peso')
     const inputAltura = event.target.querySelector('#altura')
+
+    const peso = Number(inputPeso.value)
+    const altura = Number(inputAltura.value)
+
+    if (!peso) {
+        setResultado('Peso inválido')
+    }
 }) 
 
 function criaP () {
