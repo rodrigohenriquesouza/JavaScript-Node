@@ -4,7 +4,7 @@ let varC = 'C' // A
 
 const valorA = varA
 
-varA = varB
+varA = varB 
 varB = varC
 varC = valorA
 
