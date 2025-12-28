@@ -5,6 +5,7 @@
 }
 
 * {
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     outline: none;
 }
@@ -17,6 +18,10 @@ body {
     font-size: 1.3em;
     line-height: 1.5em;
     
+}
+
+h1 {
+    text-align: center;
 }
 
 .container {
