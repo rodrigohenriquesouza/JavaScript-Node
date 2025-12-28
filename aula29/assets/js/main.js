@@ -1,4 +1,4 @@
-const h1 = document.querySelector('.container h1')
+/* const h1 = document.querySelector('.container h1')
 const data = new Date()
 
 function diaSemanaTexto(diaSemana) {
@@ -29,10 +29,10 @@ function criaData(data) {
     )
 }
 
-h1.innerHTML = criaData(data) 
+h1.innerHTML = criaData(data)  */
 
 
-/* const h1 = document.querySelector('.container h1')
+ const h1 = document.querySelector('.container h1')
 const data = new Date()
 
 const opcoes = {
@@ -40,4 +40,4 @@ const opcoes = {
     timeStyle: 'short'
 }
 
-h1.innerHTML = data.toLocaleString('pt-BR', opcoes) */
+h1.innerHTML = data.toLocaleString('pt-BR', opcoes)  
