@@ -16,5 +16,3 @@ for (i = 0; i < fighters.length; i++) {
 }
 
 container.appendChild(div)
-
-
