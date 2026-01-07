@@ -1,19 +1,20 @@
-const lutadoresUFC = [
-    {tag: 'h1', lutador: 'Lutadores'},
-    {tag: 'p', lutador: 'Charles Do Bronx'},
-    {tag: 'div', lutador: 'Jon Jones'},
-    {tag: 'footer', lutador: 'Valter Walker'},
-    {tag: 'section', lutador: 'Carlos Prates'}
+const fighters = [
+    {tag: 'p', fighter: 'Charles Oliveira'},
+    {tag: 'section', fighter: 'Dustin Poirier'},
+    {tag: 'footer', fighter: 'Max Holloway'},
+    {tag: 'h1', fighter: 'Arman Tsarukyan'}
 ]
 
-const container = document.querySelector('.container')
 const div = document.createElement('div')
+const container = document.querySelector('.container')
 
-for (i = 0; i < lutadoresUFC.length; i++) {
-    let {tag, lutador} = lutadoresUFC[i]
+for (i = 0; i < fighters.length; i++) {
+    let {tag, fighter} = fighters[i]
     let tagCriada = document.createElement(tag)
-    tagCriada.innerText = lutador
-    div.appendChild(tagCriada)
+    tagCriada.innerText = fighter
+    div.appendChild(tagCriada)  
 }
 
 container.appendChild(div)
+
+
