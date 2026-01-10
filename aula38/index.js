@@ -1,16 +1,18 @@
-function soma(x, y) {
-    if (typeof x !== 'number' || typeof y !== 'number') {
-        throw new Error ('x e y precisam ser números')
+const numeros = [1, 2, 3, 4, 5, 6, 7 , 8, 9]
+
+for (let i in numeros) {
+    let num = numeros[i]
+
+    if (num === 2) {
+        console.log('Pulei o número 2')
+        continue
     }
-    
-    return x + y
-}
 
-try {
-    console.log(soma(1, 2))
-    console.log(soma('1', 2))
-} catch (e) {
-    console.log('Alguma coisa mais amigável para o usuário')
-    
-}
+    console.log(num)
 
+    if (num === 7) {
+        console.log('7 - ENCONTRADO, LEAVE')
+        break
+    }
+}
+    
