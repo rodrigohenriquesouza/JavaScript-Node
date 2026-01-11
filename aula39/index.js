@@ -20,7 +20,7 @@
     console.log('FINALLY: Eu sempre sou executado')
 } */
 
-function returnHour(data) {
+ function returnHour(data) {
     if (data && !(data instanceof Date)) {
         throw new TypeError('Esperando instância de Date.')
     }
@@ -47,4 +47,3 @@ try {
 } finally {
     console.log('Tenha uma boa tarde.')
 }
-
