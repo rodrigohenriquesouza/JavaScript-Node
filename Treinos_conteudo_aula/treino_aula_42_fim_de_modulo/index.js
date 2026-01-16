@@ -27,7 +27,8 @@ function limpaInput() {
 function botaoApagar(li) {
     li.innerText += ' '
     const botaoApagar = document.createElement('button')
-    botaoApagar.setAttribute('class', 'botaoApaga')
+    botaoApagar.innerText = 'Apagar'
+    botaoApagar.setAttribute('class', 'Apagar')
     botaoApagar.setAttribute('title', 'Apaga a tarefa')
     li.appendChild(botaoApagar)
 }

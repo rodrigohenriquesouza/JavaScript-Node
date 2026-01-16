@@ -24,7 +24,7 @@ function criaBotaoApagar(li) {
     const botaoApagar = document.createElement('button')
     botaoApagar.innerText = 'Apagar'
     // botaoApagar.classList.add('apagar')
-    botaoApagar.setAttribute('class', 'apagar')
+    botaoApagar.setAttribute('class', 'Apagar tarefa')
     botaoApagar.setAttribute('title', 'Apagar esta tarefa')
     li.appendChild(botaoApagar)
 }
