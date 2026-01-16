@@ -49,3 +49,28 @@ function criaTarefa(textoInput) {
     botaoApagar(li)
     limpaInput()
 }
+
+function salvarTarefas() {
+    const liTarefas = document.querySelectorAll('li')
+    const listaDeTarefas = []
+
+    for (tarefa of liTarefas) {
+        let tarefaTexto = tarefa.innerText
+        tarefaTexto = tarefaTexto.replace('Apagar', ' ').trim()
+        listaDeTarefas.push(tarefaTexto)
+    }
+
+    const tarefasJSON = JSON.stringify(listaDeTarefas)
+    localStorage.setItem('tarefas', tarefasJSON)
+}
+
+function adicionaTarefasSalvas() {
+    const tarefas = localStorage.getItem('tarefas')
+    const listaDeTarefas = JSON.parse(tarefas)
+
+    for (tarefa of listaDeTarefas) {
+        criaTarefa(tarefa)
+    }
+}
+
+adicionaTarefasSalvas()
