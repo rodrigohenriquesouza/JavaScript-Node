@@ -9,7 +9,16 @@ function criaListItem() {
 
 function criaTarefa(textoInput) {
     const li = criaListItem()
-    
+    li.innerText = textoInput
+    lista.appendChild(li)
+    limpaInput()
+}
+
+function botaoApagar(li) {
+    li.innerText += ' '
+    const botaoApagar = document.createElement('button')
+    botaoApagar.setAttribute('class', 'botaoApaga')
+    botaoApagar.setAttribute('title', 'Apaga a tarefa')
 }
 
 inputTarefa.addEventListener('keypress', function(e) {
@@ -20,7 +29,7 @@ inputTarefa.addEventListener('keypress', function(e) {
     }
 })
 
-function limpaImput() {
+function limpaInput() {
     inputTarefa.value = ''
     inputTarefa.focus()
 }
