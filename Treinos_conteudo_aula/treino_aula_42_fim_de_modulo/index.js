@@ -19,6 +19,14 @@ botao.addEventListener('click', function() {
         criaTarefa(inputTarefa.value)
 })
 
+document.addEventListener('click', function(e){
+    const elemento = e.target
+    if(elemento.classList.contains('Apagar')) {
+        elemento.parentElement.remove()
+        salvarTarefas()
+    }
+})
+
 function limpaInput() {
     inputTarefa.value = ''
     inputTarefa.focus()
