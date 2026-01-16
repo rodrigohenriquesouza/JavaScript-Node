@@ -14,6 +14,11 @@ inputTarefa.addEventListener('keypress', function(e) {
     }
 })
 
+botao.addEventListener('click', function() {
+    if(!inputTarefa.value) return
+        criaTarefa(inputTarefa.value)
+})
+
 function limpaInput() {
     inputTarefa.value = ''
     inputTarefa.focus()
