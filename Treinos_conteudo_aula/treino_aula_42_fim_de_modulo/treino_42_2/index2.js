@@ -23,16 +23,17 @@ function botaoApagarLi(li) {
     li.appendChild(botao)
 }
 
-botao_tarefa.addEventListener('click', function() {
-    if(!inputTexto.value) return
-    criarTarefas(inputTexto.value)
-})
-
 document.addEventListener('click', function (e) {
     const el = e.target
     if (el.classList.contains('Apagar')) {
         el.parentElement.remove()
+        salvarTarefa()
     }
+})
+
+botao_tarefa.addEventListener('click', function() {
+    if(!inputTexto.value) return
+    criarTarefas(inputTexto.value)
 })
 
 function criarTarefas(textoInput) {
@@ -41,9 +42,35 @@ function criarTarefas(textoInput) {
     lista.appendChild(li)
     botaoApagarLi(li)
     limparInput()
+    salvarTarefa()
 }
 
 function limparInput() {
     inputTexto.value = ''
     inputTexto.focus()
 }
+
+function salvarTarefa() {
+    const liLista = lista.querySelectorAll('li')
+    const listaDeTarefas = []
+
+    for (tarefa of liLista) {
+        let tarefaTexto = tarefa.innerText
+        tarefaTexto = tarefaTexto.replace('Apagar', '').trim()
+        listaDeTarefas.push(tarefaTexto)
+    }
+
+    const tarefasJSON = JSON.stringify(listaDeTarefas)
+    localStorage.setItem('tarefas', tarefasJSON)
+}
+
+function adicionaTarefasSalvas() {
+    const tarefas = localStorage.getItem('tarefas')
+    const listaTarefas = JSON.parse(tarefas)
+    
+    for(let tarefa of listaTarefas) {
+        criarTarefas(tarefa)
+    }
+}
+
+adicionaTarefasSalvas()
