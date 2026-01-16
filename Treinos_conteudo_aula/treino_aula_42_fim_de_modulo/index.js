@@ -7,11 +7,16 @@ function criaListItem() {
     return li
 }
 
-function criaTarefa(textoInput) {
-    const li = criaListItem()
-    li.innerText = textoInput
-    lista.appendChild(li)
-    limpaInput()
+inputTarefa.addEventListener('keypress', function(e) {
+    if (e.key === "Enter") {
+        if(!inputTarefa.value) return
+        criaTarefa(inputTarefa.value)
+    }
+})
+
+function limpaInput() {
+    inputTarefa.value = ''
+    inputTarefa.focus()
 }
 
 function botaoApagar(li) {
@@ -19,17 +24,14 @@ function botaoApagar(li) {
     const botaoApagar = document.createElement('button')
     botaoApagar.setAttribute('class', 'botaoApaga')
     botaoApagar.setAttribute('title', 'Apaga a tarefa')
+    li.appendChild(botaoApagar)
 }
 
-inputTarefa.addEventListener('keypress', function(e) {
-    if (e.key === "Enter") {
-        if (!inputTarefa.value) {
-            return criaTarefa(inputTarefa.value)
-        }
-    }
-})
 
-function limpaInput() {
-    inputTarefa.value = ''
-    inputTarefa.focus()
+function criaTarefa(textoInput) {
+    const li = criaListItem()
+    li.innerText = textoInput
+    lista.appendChild(li)
+    botaoApagar(li)
+    limpaInput()
 }
