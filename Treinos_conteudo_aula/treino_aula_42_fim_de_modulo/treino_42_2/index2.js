@@ -27,6 +27,7 @@ document.addEventListener('click', function(evento) {
     const el = evento.target
     if(el.classList.contains('botaoApagar')) {
         el.parentElement.remove()
+        salvarTarefas()
     }
 })
 
@@ -46,4 +47,30 @@ function ListaDeTarefas (inputTexto) {
     listaTarefas.appendChild(tarefa)
     botaoApagarTarefa(tarefa)
     resetarInput()
+    salvarTarefas()
 }
+
+function salvarTarefas() {
+    const tarefas = document.querySelectorAll('li')
+    const listaTarefasArr = []
+
+    for (tarefa of tarefas) {
+        let tarefaTexto = tarefa.innerText
+        tarefaTexto = tarefaTexto.replace('Remover', '').trim()
+        listaTarefasArr.push(tarefaTexto)
+    }
+    
+    const salvarTarefasJSON = JSON.stringify(listaTarefasArr)
+    localStorage.setItem('tarefas', salvarTarefasJSON)
+}
+
+function pegarTarefasSalvas() {
+    const tarefas = localStorage.getItem('tarefas')
+    const listaTarefas = JSON.parse(tarefas)
+
+    for (tarefa of listaTarefas) {
+        ListaDeTarefas(tarefa)
+    }
+}
+
+pegarTarefasSalvas()
