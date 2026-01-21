@@ -28,3 +28,12 @@ const funcaoArrow = () => {
 
 funcaoArrow()
 
+// Dentro de um objeto eu posso ter uma função
+
+const obj = {
+    falar() {
+        console.log('Estou falando...')
+    }
+}
+
+obj.falar()
