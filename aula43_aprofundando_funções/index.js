@@ -22,11 +22,10 @@ executaFuncao(souUmDado) */
 
 // Arrow function 
 
-const funcaoArrow = () => {
-    console.log('Sou uma arroz function')
+const falarOi = () => {
+    console.log('OI')
 }
-
-funcaoArrow()
+falarOi()
 
 // Dentro de um objeto eu posso ter uma função
 
