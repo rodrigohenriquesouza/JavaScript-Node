@@ -36,3 +36,10 @@ const obj = {
 }
 
 obj.falar()
+
+function oiTudoBem(funcaoOi) {
+    funcaoOi()
+    console.log('Tudo bem?')
+}
+
+oiTudoBem(falarOi)
