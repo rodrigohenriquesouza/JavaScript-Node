@@ -40,3 +40,13 @@ const quadriplica = criaMultiplicador(4)
 console.log(duplica(10))
 console.log(triplica(2))
 console.log(quadriplica(2))
+
+function bonecoPromotion(firstName) {
+    return function(secondName) {
+        return firstName + " " + secondName
+    }
+}
+
+const firstName = bonecoPromotion('Elite')
+const secondName = firstName('Knight')
+console.log(secondName)
