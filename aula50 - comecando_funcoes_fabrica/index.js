@@ -1,5 +1,5 @@
 // Factory function (Função fábrica)
-// Constructor function (Funlçao construturoa)
+// Constructor function (Funçao construturoa)
 function criaPesso(nome, sobrenome, altura, peso) {
     return {
         nome, 
@@ -33,9 +33,9 @@ function criaPesso(nome, sobrenome, altura, peso) {
 }
 
 const p1 = criaPesso('Rodrigo', 'Souza', 1.81, 90)
-p1.nomeCompleto = 'Natalia Oliveira Souza'
-console.log(p1.nome)
-console.log(p1.sobrenome)
-console.log(p1.nomeCompleto)
-console.log(p1.fala())
+const p2 = criaPesso('Natalia', 'Oliveira', 1.65, 67)
+const p3 = criaPesso('Nicolas', 'Tesla', 1.90, 77)
 
+console.log(p1.imc)
+console.log(p2.imc)
+console.log(p3.imc)
