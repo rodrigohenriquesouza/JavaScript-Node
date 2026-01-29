@@ -15,7 +15,6 @@ function criaPesso(nome, sobrenome, altura, peso) {
             valor = valor.split(' ')
             this.nome = valor.shift()
             this.sobrenome = valor.join(' ')
-            console.log(valor)
         },
 
         fala(assunto = 'falando sobre NADA.') {
