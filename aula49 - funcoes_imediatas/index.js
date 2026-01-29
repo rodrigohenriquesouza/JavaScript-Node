@@ -13,6 +13,6 @@
     falaNome()
     console.log(idade, peso, altura)
 
-})(23, 110, 1.81)
+})(23, 110, 1.81);
 
-const nome = 'Qualqer'
+
