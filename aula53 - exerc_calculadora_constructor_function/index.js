@@ -1,17 +1,23 @@
 function Calculadora () {
-    const Display = document.querySelector('.display')
-
+    this.display = document.querySelector('.display')
     this.inicia = () => {
         this.botoesCalcu()  
         this.pressionaEnter()
     }
 
+    this.pressionaEnter = () => {
+        this.display.addEventListener('keyup', e => {
+            if(e.keyCode !== 13) return
+            this.fazerConta()
+        })
+    }
+
     this.botoesCalcu = () => {
-        document.addEventListener('click',  (e) => {
+        document.addEventListener('click', e => {
             const el = e.target
 
             if(el.classList.contains('btn-num')) {
-                this.valorDisplay(el.innerText)
+                this.valorDisplay(el)
             }
             if(el.classList.contains('btn-del')) {
                 this.apagarUm()
@@ -25,42 +31,26 @@ function Calculadora () {
         })
      }
 
-     Display.addEventListener('keyup', (e) => {
-        if(e.keyCode === 13) {
-            this.fazerConta()
-        }
-     })
-
-     this.fazerConta() = () => {
-        let conta = Display.value
-
+     this.fazerConta = () => {
         try {
-            conta = eval(conta)
-
-            if(!conta) {
-                return 'Conta inválida'
+            
+        const conta = eval(this.display.value)
+            if(Number.isNaN(conta)) {
+                return alert('Conta inválida')
             }
+
+            this.display.value = conta
+
         } catch (erro) {
-            return 'Conta inválida'
+            return alert('Conta inválida')
         }
-
-        conta = Display.value
      }
 
-     this.valorDisplay() = (valor) => {
-        Display.value += valor
-     }
-
-     this.apagarUm() = () => {
-        Display.value = Display.value.slice(0, -1)
-     }
-
-     this.limparConta() = () => {
-        Display.value = ''
-     }
+     this.valorDisplay = valor => this.display.value += valor.innerText
+     this.apagarUm = () => this.display.value = this.display.value.slice(0, -1)
+     this.limparConta = () => this.display.value = ''
 
 }
 
 const calculadora = new Calculadora()
-
 calculadora.inicia()
