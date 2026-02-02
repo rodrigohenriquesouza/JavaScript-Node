@@ -33,7 +33,7 @@ function Calculadora () {
 
      this.fazerConta = () => {
         try {
-            
+
         const conta = eval(this.display.value)
             if(Number.isNaN(conta)) {
                 return alert('Conta inválida')
@@ -46,7 +46,10 @@ function Calculadora () {
         }
      }
 
-     this.valorDisplay = valor => this.display.value += valor.innerText
+     this.valorDisplay = valor => {
+        this.display.value += valor.innerText 
+        this.display.focus()
+    }
      this.apagarUm = () => this.display.value = this.display.value.slice(0, -1)
      this.limparConta = () => this.display.value = ''
 
