@@ -1,12 +1,12 @@
 function Calculadora () {
     const Display = document.querySelector('.display')
 
-    this.inicia = function () {
-        this.botoesCalcu()
+    this.inicia = () => {
+        this.botoesCalcu()  
         this.pressionaEnter()
     }
 
-    this.botoesCalcu = function () {
+    this.botoesCalcu = () => {
         document.addEventListener('click',  (e) => {
             const el = e.target
 
