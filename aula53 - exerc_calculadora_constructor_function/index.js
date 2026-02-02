@@ -16,18 +16,10 @@ function Calculadora () {
         document.addEventListener('click', e => {
             const el = e.target
 
-            if(el.classList.contains('btn-num')) {
-                this.valorDisplay(el)
-            }
-            if(el.classList.contains('btn-del')) {
-                this.apagarUm()
-            }
-            if(el.classList.contains('btn-clear')) {
-                this.limparConta()
-            }
-            if(el.classList.contains('btn-eq')) {
-                this.fazerConta()
-            }
+            if(el.classList.contains('btn-num'))  this.valorDisplay(el)
+            if(el.classList.contains('btn-del'))  this.apagarUm()
+            if(el.classList.contains('btn-clear'))  this.limparConta()
+            if(el.classList.contains('btn-eq'))  this.fazerConta()
         })
      }
 
