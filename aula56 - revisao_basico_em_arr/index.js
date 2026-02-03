@@ -1,10 +1,10 @@
 // Valor por referência
 
-const nomes = ['Rodrigo', 'Natalia', 'Mauricio']
-const novoNome = [...nomes]
-
-const mauricio = novoNome.pop()
-
+let nomes = ['Rodrigo', 'Natalia', 'Mauricio']
 console.log(nomes)
-console.log(novoNome)
-console.log(mauricio)
+
+const stringNomes =  nomes.join(' ')
+console.log(stringNomes)
+
+nomes = stringNomes.split(' ')
+console.log(nomes)
