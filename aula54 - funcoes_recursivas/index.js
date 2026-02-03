@@ -1,10 +1,10 @@
 // Funções recursivas
 
-function recursiva(max) {
-    console.log(max)
-    if (max >= 10) return
-    max++
-    recursiva(max)
+function contarNum(num) {
+    console.log(num)
+    if (num >= 15) return
+    num++
+    contarNum(num)
 }
 
-recursiva(0)
+contarNum(-5)
