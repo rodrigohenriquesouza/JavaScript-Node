@@ -16,3 +16,11 @@ console.log(lutadorNomeGrande)
 
 const campeosUFC = lutadoresUFC.filter(obj => obj.champion === true)
 console.log(campeosUFC)
+
+const maisLutadoresUFC = ['Petry Yan', 'Max Holloway']
+console.log(maisLutadoresUFC)
+maisLutadoresUFC.splice(maisLutadoresUFC.length, 0, 'Dustin Poirier', 'Alex Poatan', 'Khabib Nurmagomedov')
+console.log(maisLutadoresUFC)
+
+const juntaLutadores = [...lutadoresUFC, ...maisLutadoresUFC]
+console.log(juntaLutadores)
