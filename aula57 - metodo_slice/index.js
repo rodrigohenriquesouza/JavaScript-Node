@@ -4,5 +4,7 @@ const nomes = ['Rodrigo', 'Natalia', 'Mauricio', 'Julia', 'Datan', 'Matheus']
 
 console.log(nomes)
 
+
+
 const nomesRemovidos = nomes.splice(-5, Number.MAX_VALUE)
 console.log(nomesRemovidos)
