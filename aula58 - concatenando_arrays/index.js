@@ -4,4 +4,8 @@ const nums2 = [4, 5, 6]
 // ... rest -> ... spread
 const juntaNums = [...nums1, 'Rodrigo', ...nums2, ...[7, 8 ,9]]
 
-console.log(juntaNums)
+const lutadoresUFC = ['Dustin Poirier', 'Max Holloway', 'Charles Oliveira']
+const atualCampeoesUFC = ['Alex Poatan', 'Ilia Topuria', 'Petry Yan']
+
+const lutadores = [...lutadoresUFC, ...atualCampeoesUFC, 'Rodrigo']
+console.log(lutadores)
