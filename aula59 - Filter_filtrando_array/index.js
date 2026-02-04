@@ -23,9 +23,8 @@ const pessoas50mais = pessoas.filter(obj => obj.idade > 50)
 console.log(pessoas50mais)
 
 // Retorne as pessoas cujo nome termina com a
-const pessoaTerminaA = pessoas.filter(obj => {
-    
-})
+const pessoaTerminaA = pessoas.filter(obj => obj.nome.toLowerCase().endsWith('a'))
+console.log(pessoaTerminaA)
 
 
 
