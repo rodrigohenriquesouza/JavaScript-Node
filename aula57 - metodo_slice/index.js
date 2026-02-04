@@ -20,5 +20,5 @@ console.log(nomes) */
 console.log(nomes) */
 
 // pop()
-nomes.splice(-4, Number.MAX_VALUE)
+nomes.splice(-5, Number.MAX_VALUE)
 console.log(nomes)
