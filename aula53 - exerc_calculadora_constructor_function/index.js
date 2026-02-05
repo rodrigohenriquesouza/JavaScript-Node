@@ -16,7 +16,7 @@ function Calculadora () {
         document.addEventListener('click', e => {
             const el = e.target
 
-            if(el.classList.contains('btn-num'))  this.valorDisplay(el)
+            if(el.classList.contains('btn-num'))  this.valorDisplay(el.innerText)
             if(el.classList.contains('btn-del'))  this.apagarUm()
             if(el.classList.contains('btn-clear'))  this.limparConta()
             if(el.classList.contains('btn-eq'))  this.fazerConta()
@@ -39,7 +39,7 @@ function Calculadora () {
      }
 
      this.valorDisplay = valor => {
-        this.display.value += valor.innerText 
+        this.display.value += valor
         this.display.focus()
     }
      this.apagarUm = () => this.display.value = this.display.value.slice(0, -1)

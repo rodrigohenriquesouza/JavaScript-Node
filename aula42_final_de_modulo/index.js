@@ -29,20 +29,6 @@ function criaBotaoApagar(li) {
     li.appendChild(botaoApagar)
 }
 
-function criaTarefa(textoInput) {
-    const li = criaLi()
-    li.innerText = textoInput
-    tarefas.appendChild(li)
-    limpaInput()
-    criaBotaoApagar(li)
-    salvarTarefas()
-}
-
-btnTarefa.addEventListener('click', function() {
-    if(!inputTarefa.value) return 
-    criaTarefa(inputTarefa.value)
-}) 
-
 document.addEventListener('click', function(e) {
     const el = e.target
 
@@ -51,6 +37,20 @@ document.addEventListener('click', function(e) {
         salvarTarefas()
     }
 })
+
+btnTarefa.addEventListener('click', function() {
+    if(!inputTarefa.value) return 
+    criaTarefa(inputTarefa.value)
+}) 
+
+function criaTarefa(textoInput) {
+    const li = criaLi()
+    li.innerText = textoInput
+    tarefas.appendChild(li)
+    limpaInput()
+    criaBotaoApagar(li)
+    salvarTarefas()
+}
 
 function salvarTarefas() {
     const liTarefas = tarefas.querySelectorAll('li')
