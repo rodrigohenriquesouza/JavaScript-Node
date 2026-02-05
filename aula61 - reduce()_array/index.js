@@ -32,6 +32,6 @@ const pessoas = [
 const pessoaMaisVelha = pessoas.reduce((acumulador, valor) => {
     if (acumulador.idade > valor.idade) return acumulador
     return valor
-}, 0)
+})
 
 console.log(pessoaMaisVelha)
