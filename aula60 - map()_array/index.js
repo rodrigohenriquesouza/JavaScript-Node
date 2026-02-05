@@ -18,7 +18,6 @@
 // Para cada elemento:
 // Retorne apenas uma string com o nome da pessoa
 const stringPessoas = pessoas.map(obj => obj.nome)
-
 console.log(pessoas)
 console.log(stringPessoas)
 
