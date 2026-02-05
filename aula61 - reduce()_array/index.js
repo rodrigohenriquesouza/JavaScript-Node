@@ -7,6 +7,14 @@ const total = numeros.reduce(function(acumulador, valor, indice, array) {
     return acumulador
 }, 0)
 
+/* pequeno teste
+const nums2 = [5, 5, 10, 7, 10]
+const total2 = nums2.reduce((acml, valor) => {
+    acml += valor
+    return acml
+}, 0)
+console.log(total2) */
+
 
 // Retorne a pessoa mais velha
 
