@@ -21,7 +21,7 @@ console.log(total2) */
 // Retorne a pessoa mais velha
 
 const pessoas = [
-     {nome: 'Rodrigo', idade: 23},
+    {nome: 'Rodrigo', idade: 23},
     {nome: 'Luiz', idade: 62},
     {nome: 'Natalia', idade: 17},
     {nome: 'Mauricio', idade: 25},
@@ -29,9 +29,9 @@ const pessoas = [
     {nome: 'Wallace', idade: 47}
  ]
 
-const maisExperiente = pessoas.reduce((acumulador, valor) => {
+const pessoaMaisVelha = pessoas.reduce((acumulador, valor) => {
     if (acumulador.idade > valor.idade) return acumulador
     return valor
 }, 0)
 
-console.log(maisExperiente)
+console.log(pessoaMaisVelha)
