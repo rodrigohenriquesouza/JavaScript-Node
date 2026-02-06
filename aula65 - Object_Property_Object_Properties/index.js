@@ -1,9 +1,22 @@
 // Object.defineProperty() - Object.defineProperties()
 function Produto(nome, preco, estoque) {
-    this.nome = nome
-    this.preco = preco
 
-    Object.defineProperty(this, 'estoque', {
+    Object.defineProperties(this, {
+        nome: {
+            enumerable: true,
+            value: nome,
+            writable: false,
+            configurable: true
+        },
+        preco: {
+            enumerable: true,
+            value: preco,
+            writable: false,
+            configurable: true
+        }
+    })
+
+     Object.defineProperty(this, 'estoque', {
         enumerable: true, // mostra a chave 
         value: estoque, // valor
         writable: true, // altera ou não
@@ -12,6 +25,7 @@ function Produto(nome, preco, estoque) {
 }
 
 const p1 = new Produto('Luvas MMA', 230, 15)
+delete p1.preco
 
 p1.estoque = 25
 
