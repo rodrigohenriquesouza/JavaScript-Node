@@ -7,7 +7,7 @@
     const profissao = 'profissao'
     console.log(pessoa[profissao]) */
 
-const p1 = new Object()
+/* const p1 = new Object()
 
 p1.nome = 'Rodrigo'
 p1.sobrenome = 'Souza'
@@ -20,5 +20,20 @@ p1.getDataDeNascimento = function () {
     return 'Nasceu em: ' + (data.getFullYear() - this.idade)
 }
 
-console.log(p1.falaProfissao())
-console.log(p1.getDataDeNascimento())
+for (chave in p1) {
+    console.log(p1[chave])
+} */
+
+// Factory functions 
+/* function criaPessoa(nome, sobrenome) {
+    return {
+        nome,
+        sobrenome,
+        get falaNome() {
+            return `${this.nome} ${this.sobrenome}`
+        }
+    }
+}
+ */
+
+// Constructor functions
