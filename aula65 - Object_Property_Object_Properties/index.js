@@ -12,7 +12,7 @@ function Produto(nome, preco, estoque) {
             enumerable: true,
             value: preco,
             writable: false,
-            configurable: true
+            configurable: false
         }
     })
 
@@ -29,6 +29,9 @@ delete p1.preco
 
 p1.estoque = 25
 
-for(let chave in p1) {
+for (chave in p1) {
     console.log(p1[chave])
 }
+
+console.log(Object.keys(p1))
+
