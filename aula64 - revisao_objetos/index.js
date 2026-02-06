@@ -53,6 +53,7 @@ console.log(p1)
 
 const nomes = ['Rodrigo', 'Miranda', 'Natalia', 'Datan']
 
+
 console.log(nomes)
 Object.freeze(nomes)
 nomes.splice(-1, 1)
