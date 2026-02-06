@@ -51,3 +51,9 @@ console.log(p1)
 delete p1.nome
 console.log(p1)
 
+const nomes = ['Rodrigo', 'Miranda', 'Natalia', 'Datan']
+
+console.log(nomes)
+Object.freeze(nomes)
+nomes.splice(-1, 1)
+console.log(nomes)
