@@ -1,7 +1,8 @@
 /* 
-Object.values
-Object.entries
-Object.getOwnPropertyDescriptor(objeto, 'propriedade')
+Object.values - pego os valores do meu objeto
+Object.entries - pego as entradas, chave e valor
+Object.getOwnPropertyDescriptor(objeto, 'propriedade') - pego as proriedades de um objeto
+Object.getOwnPropertyDescriptors(objeto, 'propriedade', 'propriedade') - pego as proriedades de uvarios objetos
 Object.assign(objeto destino, any)
 ... (spread)
 */
@@ -14,10 +15,17 @@ Object.assign(objeto destino, any)
 
 const produto = {nome: 'Saco de pancada', preco: 200}
 
+const produto2 = Object.assign(produto, 'nome', {cor: 'vermelha'})
+console.log(produto2)
 
+// console.log(Object.getOwnPropertyDescriptors(produto, 'nome', 'preco'))
 
-for(let valor of Object.values(produto)) {
+/* for (let [chave, valor] of Object.entries(produto)) {
+    console.log(chave, valor)
+} */
+
+/* for(let valor of Object.values(produto)) {
     console.log(valor)
-}
+} */
 
 
