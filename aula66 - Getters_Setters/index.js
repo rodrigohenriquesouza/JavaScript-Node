@@ -1,24 +1,21 @@
-function Produtos(nome, preco, estoque) {
-    this.nome = nome
+function ProdutosMMA(produto, preco, estoque) {
+    this.produto = produto
     this.preco = preco
-
-    let estoqueLoja = estoque
 
     Object.defineProperty(this, 'estoque', {
         enumerable: true,
         configurable: true,
         get: function() {
-            return estoqueLoja
+            return estoque
         },
-
-        set: function(valor) {         // Validar o parametro passado
-            estoqueLoja = valor
-            if ( typeof valor !== 'number') throw new TypeError('O estoque aceita somente numeros')
+        set: function(qtd) {
+            
+            if (typeof qtd !== 'number') {
+                throw new TypeError('Aceita somento numeros')
+            }
+            estoque = qtd
         }
     })
 }
 
-const p1 = new Produtos('Camiseta', 20, 3)
-
-p1.estoque = 'araraquara'
-
+const luva = new ProdutosMMA('luva', 200, 10)
