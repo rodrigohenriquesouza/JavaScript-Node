@@ -55,3 +55,5 @@ const camisetaRoxa = new Camiseta('Camisa', 30, 'Roxa')
 const canecaPorcelana = new Caneca('Caneca-G', 20, 'Porcelana', 10)
 
 canecaPorcelana.estoque = 5
+
+console.log(canecaPorcelana.estoque)
