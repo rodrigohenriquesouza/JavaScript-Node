@@ -10,7 +10,12 @@ function ValidarCPF(cpf) {
 ValidarCPF.prototype.validar = function() {
     if(typeof this.cpfPuro === 'undefined') return false
     if(this.cpfPuro.length !== 11) return false
+    if(this.sequencial()) return false
 }
 
-const CPF = new ValidarCPF('4004.48948.1234')
+ValidarCPF.prototype.sequencial = function() {
+    return this.cpfPuro[0].repeat(this.cpfPuro.length) === this.cpfPuro
+}
+
+const CPF = new ValidarCPF('11111111111')
 CPF.validar()
