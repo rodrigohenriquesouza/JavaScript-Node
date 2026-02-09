@@ -19,11 +19,30 @@ function Camiseta(nome, valor, cor) {
     this.cor = cor
 }
 
+function Caneca(nome, valor, material) {
+    Produto.call(this, nome, valor)
+    this.material = material
+}
+
+Caneca.prototype = Object.create(Produto.prototype)
+Caneca.prototype.constructor = Caneca
+
 Camiseta.prototype = Object.create(Produto.prototype)
 Camiseta.prototype.constructor = Camiseta
+Camiseta.prototype.aumentoPorcentagem = function (aumento) {
+    this.valor = this.valor + (this.valor * aumento / 100)
+}
+
+Camiseta.prototype.descontoPorcentagem = function (desconto) {
+    this.valor = this.valor - (this.valor * desconto / 100)
+}
 
 const produtoQualquer = new Produto('Luva-Boxe', 300)
-const camisetaRoxa = new Camiseta('Camisa', 100, 'Roxa')
+const camisetaRoxa = new Camiseta('Camisa', 30, 'Roxa')
+const canecaPorcelana = new Caneca('Caneca-G', 20, 'Porcelana')
+
 console.log(produtoQualquer)
-camisetaRoxa.aumento(20)
 console.log(camisetaRoxa)
+console.log(canecaPorcelana)
+
+
