@@ -19,9 +19,22 @@ function Camiseta(nome, valor, cor) {
     this.cor = cor
 }
 
-function Caneca(nome, valor, material) {
+function Caneca(nome, valor, material, estoque) {
     Produto.call(this, nome, valor)
     this.material = material
+    Object.defineProperty(this, 'estoque', {
+        configurable: false,
+        enumerable: true,
+        get: function() {
+            return estoque
+        },
+        set: function(qtd) {
+            if (typeof qtd !== 'number') {
+                throw new TypeError('Aceita somente números')
+            }
+            estoque = qtd
+        }
+    })
 }
 
 Caneca.prototype = Object.create(Produto.prototype)
@@ -39,10 +52,6 @@ Camiseta.prototype.descontoPorcentagem = function (desconto) {
 
 const produtoQualquer = new Produto('Luva-Boxe', 300)
 const camisetaRoxa = new Camiseta('Camisa', 30, 'Roxa')
-const canecaPorcelana = new Caneca('Caneca-G', 20, 'Porcelana')
+const canecaPorcelana = new Caneca('Caneca-G', 20, 'Porcelana', 10)
 
-console.log(produtoQualquer)
-console.log(camisetaRoxa)
-console.log(canecaPorcelana)
-
-
+canecaPorcelana.estoque = 5
