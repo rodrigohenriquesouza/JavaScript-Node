@@ -51,8 +51,7 @@ ValidaCPF.prototype.criaDigito = function (cpfParcial) {
 }
 
 ValidaCPF.prototype.isSequencia = function() {
-    const sequencia = this.cpfLimpo.repeat(this.cpfLimpo.length)
-    return sequencia === this.cpfLimpo
+   return this.cpfLimpo[0].repeat(this.cpfLimpo.length) === this.cpfLimpo
 }
 
 const cpf = new ValidaCPF('48208542830')
