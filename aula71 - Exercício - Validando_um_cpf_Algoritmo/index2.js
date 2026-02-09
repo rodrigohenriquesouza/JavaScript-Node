@@ -37,9 +37,9 @@ ValidarCPF.prototype.sequencial = function() {
     return this.cpfPuro[0].repeat(this.cpfPuro.length) === this.cpfPuro  // verifica se o parametro passado tem numeros sequenciais
 }
 
-const CPF = new ValidarCPF('482.085.428;30')
+const CPF = new ValidarCPF('482.085.428;30')  // Atribuo a constructor a uma variavel e passo o parametro
 
-if(CPF.validar()) {
+if(CPF.validar()) {                         // mostro para o usuario mas é só um exemplo
     console.log('PARABÉNS CPF VALIDADO')
 } else {
     console.log('CPF NÃO VALIDADO. ERRO DE DADOS')
