@@ -15,4 +15,45 @@ Se o numero digito for maior que 9, consideramos 0.
 Se o número digito for maior que 9 consideramos 0.
 */
 
-let cpf = '705.484.450-52'
+function ValidaCPF(cpf) {
+    Object.defineProperty(this, 'cpfLimpo', {
+        enumerable: true,
+        get: function() {
+            return cpf.replace(/\D+/g, '')
+        }
+    })
+}
+
+ValidaCPF.prototype.valida = function() {
+    if (typeof this.cpfLimpo === 'undefined') return false
+    if (this.cpfLimpo.length !== 11) return false
+
+    const cpfParcial = this.cpfLimpo.slice(0, -2)
+    const digito1 = this.criaDigito(cpfParcial)
+    const digito2 = this.criaDigito(cpfParcial + digito1)
+    console.log(this.cpfLimpo)
+    console.log(digito1)
+    console.log(digito2)
+    return true
+}
+
+ValidaCPF.prototype.criaDigito = function (cpfParcial) {
+    const cpfArray = Array.from(cpfParcial)
+    let regressivo = cpfArray.length + 1
+    const total = cpfArray.reduce((acml, numCpf) => {
+        acml += (regressivo * Number(numCpf))
+       regressivo--
+       return acml
+    }, 0)
+
+    const digito = 11 - (total % 11) 
+    return digito > 9 ? 0 : digito
+}
+
+
+const cpf = new ValidaCPF('705.484.450-52')
+cpf.valida()
+
+
+
+

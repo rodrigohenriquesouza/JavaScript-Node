@@ -20,5 +20,8 @@ console.log(nomes) */
 console.log(nomes) */
 
 // pop()
-nomes.splice(-5, Number.MAX_VALUE)
-console.log(nomes)
+/* nomes.splice(-5, Number.MAX_VALUE)
+console.log(nomes) */
+
+const nomesRemovidos = nomes.splice(-5, Number.MAX_VALUE)
+console.log(nomesRemovidos)
