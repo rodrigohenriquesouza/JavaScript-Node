@@ -34,14 +34,22 @@ function ContaCorrente(agencia, conta, saldo, limite) {
 ContaCorrente.prototype = Object.create(Conta.prototype)
 ContaCorrente.prototype.constructor = Conta
 
+ContaCorrente.prototype.depositar = function(quantia) {
+    this.saldo += quantia
+    this.verSaldo()
+}
+
 ContaCorrente.prototype.sacar = function(quantia) {
     if (quantia > (this.saldo + this.limite)) {
-        verSaldo()
+        console.log(`Saldo insifuciente: ${this.saldo}`)
         return
     }
+
+    this.saldo -= quantia
+    this.verSaldo()
 }
 
 const contaCorrente = new ContaCorrente(11, 22, 0, 300)
 
-contaCorrente.sacar(300)
+contaCorrente.sacar(299)
 
