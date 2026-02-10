@@ -26,5 +26,22 @@ Conta.prototype.verSaldo = function() {
 
 const conta1 = new Conta(11, 22, 10) 
 
+function ContaCorrente(agencia, conta, saldo, limite) {
+    Conta.call(this, agencia, conta, saldo)
+    this.limite = limite
+}
 
+ContaCorrente.prototype = Object.create(Conta.prototype)
+ContaCorrente.prototype.constructor = Conta
+
+ContaCorrente.prototype.sacar = function(quantia) {
+    if (quantia > (this.saldo + this.limite)) {
+        verSaldo()
+        return
+    }
+}
+
+const contaCorrente = new ContaCorrente(11, 22, 0, 300)
+
+contaCorrente.sacar(300)
 
