@@ -37,15 +37,21 @@ ContaC.prototype.constructor = ContaC
 
 ContaC.prototype.depositar = function(qtDepositada) {
     this.saldo += qtDepositada
-    verSaldo()
+    this.verSaldo()
 }
 
 ContaC.prototype.sacar = function(qtParaSacar) {
-    
+        if(qtParaSacar > (this.saldo + this.limite)) return console.log(`Quantia muito alta. seu saldo é: ${this.saldo} e seu limite é: ${this.limite}`)
+        this.saldo -= qtParaSacar
+        this.verSaldo()
 }
 
 const conta = new Conta(5, 15, 30)
 const contaP = new ContaP(10, 20, 100)
+const contaC = new ContaC(22, 30, 30, 50)
+
+contaC.depositar(30)
+contaC.sacar(90)
 
 
 
