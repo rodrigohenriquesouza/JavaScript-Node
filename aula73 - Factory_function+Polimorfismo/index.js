@@ -1,27 +1,33 @@
-function criaPessoa(nome, sobrenome) {
+const metodoFalar = {
+    falar() {
+        console.log(`${this.nome} esta falando sobre factory functions`)
+    }   
+}
 
-    const pessoaPrototype = {
-        falar() {
-            console.log(`${this.nome} esta falando oi`)
-        },
-
-        treinando() {
-            console.log(`${this.nome} ${this.sobrenome} esta treinando`)
-        },
-
-        indoEmbora() {
-            console.log(`${this.nome} esta dizendo tchau`)
-        }
+const metodoHaha = {
+    rindo() {
+        console.log(`${this.nome} esta dando risada`)
     }
+}
 
+
+const metodoAlmocar = {
+    almocando() {
+        console.log(`${this.nome} ${this.sobrenome} esta almoçando`)
+    }
+}
+
+const pessoaPrototype = Object.assign({}, metodoFalar, metodoHaha, metodoAlmocar )
+
+function criaPessoa(nome, sobrenome) {
     return Object.create(pessoaPrototype, {
         nome: {value: nome},
         sobrenome: {value: sobrenome}
     })
 }
 
-const pessoa1 = criaPessoa('Rodrigo', 'Henrique')
 
-pessoa1.treinando()
-pessoa1.indoEmbora()
+const pessoa1 = criaPessoa('Rodrigo', 'Henrique')
+pessoa1.rindo()
+pessoa1.almocando()
 pessoa1.falar()
