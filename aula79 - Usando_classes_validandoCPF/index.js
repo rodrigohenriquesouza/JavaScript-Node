@@ -11,16 +11,16 @@ class ValidaCPF {
     }
 
     valida() {
-        if (typeof this.cpfLIMPADO === 'undefined') return 
-        if (this.cpfLIMPADO.length > 11) return 
-        if (this.sequencial()) return
+        if (typeof this.cpfLIMPADO === 'undefined') return console.log('Informe um CPF')
+        if (this.cpfLIMPADO.length !== 11) return console.log('CPF NÃO EXISTE')
+        if (this.sequencial()) return console.log('CPF FAKE')
 
         const cpfSeparado = this.cpfLIMPADO.slice(0, -2)
         const dig1 = this.pegaDigito(cpfSeparado)
         const dig2 = this.pegaDigito(cpfSeparado + dig1)
         const cpfCOMPLETO = cpfSeparado + dig1 + dig2
 
-        this.cpfLIMPADO === cpfCOMPLETO
+        return cpfCOMPLETO === this.cpfLIMPADO
     }
 
     pegaDigito(cpfSeparado) {
@@ -29,6 +29,7 @@ class ValidaCPF {
         const total = arrayCPF.reduce((acml, nCPF) => {
             acml += (Number(nCPF) * multiplica)
             multiplica--
+            return acml
         }, 0)
 
         const digito = 11 - (total % 11)
@@ -40,5 +41,11 @@ class ValidaCPF {
     }
 
 }
-const cpf = new ValidaCPF('482.085.428.30')
+const cpf = new ValidaCPF('073.053.810-98')
+
+if (cpf.valida()) {
+    console.log('CPF VALIDO')
+} else {
+    console.log('CPF INVALIDO')
+}
 
