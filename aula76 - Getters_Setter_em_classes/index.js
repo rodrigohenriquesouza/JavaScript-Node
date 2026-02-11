@@ -8,7 +8,6 @@ class Carro {
     set velocidade(velocidade) {
         if (typeof velocidade !== 'number') return
         if (velocidade >= 100 || velocidade <= 0) return
-        console.log('setter')
         this[_vel] = velocidade
     }
 
@@ -33,4 +32,3 @@ const carro1 = new Carro('Camaro')
 
 carro1.acelerar()
 carro1.velocidade = 60
-console.log(carro1.velocidade)
