@@ -29,10 +29,37 @@ class Celular extends Dispotivo {
     }
 }
 
+class Torradeira extends Dispotivo {
+    constructor(nome, makePao) {
+        super(nome)
+        this.makePao = makePao
+    }
+
+    fazerPao() {
+        if (this.makePao !== true) return
+        console.log(`Fazendo pão quentinho`)
+    }
+
+    ligar() {
+        if (this.ligado === true) {
+            console.log(`Torradeira ja ligada`)
+            return
+        }
+        this.ligado = true
+    }
+    
+}
+
 
 const celular1 = new Celular('IPHONE', 'IPHONE 10', 'Branco')
-celular1.ligar()
-console.log(celular1)
+const torradeira = new Torradeira('Torradeira eletrolux', true)
+
+torradeira.fazerPao()
+torradeira.ligar()
+torradeira.ligar()
+
+
+
 
 
 
