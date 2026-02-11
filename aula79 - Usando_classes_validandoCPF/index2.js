@@ -25,7 +25,7 @@ class ValidadorCPF {
         let reverso = cpfSemDigitos.length + 1
 
         for(let stringNumerica of cpfSemDigitos) {
-            total += reverso * Number(stringNumerica)
+            total += (Number(stringNumerica) * reverso)
             reverso--
         }
 
