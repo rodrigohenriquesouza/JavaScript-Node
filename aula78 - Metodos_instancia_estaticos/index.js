@@ -6,11 +6,11 @@ class Carro {
         this[_vel] = 0
     } 
 
-        // metodo instanciado
+        // Metodo instanciado
     acelera(aumentoVelocidade) {
         this[_vel] += aumentoVelocidade
     }
-
+        // Metodo estativo
     static consertarMotor() {
         console.log('Consertando motor')
     }
