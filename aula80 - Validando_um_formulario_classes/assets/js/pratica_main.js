@@ -18,9 +18,13 @@ class ValidaForm {
     inputsValids() {
         let valid = true
 
+       
+
         for(let input of this.formulario.querySelectorAll('.validar')) {
+            const label = input.previousElementSibling.innerText
             if(!input.value) {
-                this.throwError(input, 'O campo precisa ser preenchido')
+                this.throwError(input, `O ${label} precisa ser preenchido!.`)
+                valid = false
             }
         }
     }
