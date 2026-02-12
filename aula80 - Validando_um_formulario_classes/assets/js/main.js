@@ -29,6 +29,10 @@ class ValidaFormulario {
                 this.criaErro(campo, `Campo "${label}" não pode estar em branco.`)
                 valid = false
             }
+
+            if(campo.classList.contains('cpf')) {
+                
+            }
         }
     }
 
