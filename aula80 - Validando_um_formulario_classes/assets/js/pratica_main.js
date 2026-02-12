@@ -12,7 +12,7 @@ class ValidaForm {
 
     handleSubmit(e) {
         e.preventDefault()
-        
+        console.log('teste do evento')
     }
 }
 
