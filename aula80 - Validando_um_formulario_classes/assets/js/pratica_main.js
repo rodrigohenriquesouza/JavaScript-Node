@@ -27,7 +27,7 @@ class ValidaForm {       // class para validar formulario
         const senha = document.querySelector('.senha')
         const repeteSenha = document.querySelector('.repetir-senha')
 
-        if(senha.length !== repeteSenha.length) {
+        if(senha.value.length !== repeteSenha.value.length) {
             this.throwError(senha, 'As senhas devem ser iguais!')
             this.throwError(repeteSenha, 'As senhas devem ser iguais!')
             valid = false
