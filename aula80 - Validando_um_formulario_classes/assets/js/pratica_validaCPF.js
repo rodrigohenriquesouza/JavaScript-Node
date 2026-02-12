@@ -38,6 +38,3 @@ class ValidaCPF {
         return this.cpfLimpo[0].replace(this.cpfLimpo.length) === this.cpfLimpo
     }
 }
-
-const cpf = new ValidaCPF('482.085.428.30')
-

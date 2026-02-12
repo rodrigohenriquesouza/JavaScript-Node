@@ -22,15 +22,26 @@ class ValidaForm {
 
         for(let input of this.formulario.querySelectorAll('.validar')) {
             const label = input.previousElementSibling.innerText
+
             if(!input.value) {
-                this.throwError(input, `O ${label} precisa ser preenchido!.`)
                 valid = false
+                this.throwError(input, `O ${label} precisa ser preenchido!.`)
             }
 
             if(input.classList.contains('cpf')) {
-                this.ValidaCPF()
-            }
+                if(!this.validaCPF(input)) valid = false
+        }   
+    }
+}
+
+    validaCPF(input) {
+        const cpf = new ValidaCPF(input.value)
+
+        if(!cpf.valida()) {
+            this.throwError(input, 'CPF inválido')
+            return false
         }
+        return true
     }
 
     throwError(input, msg) {
