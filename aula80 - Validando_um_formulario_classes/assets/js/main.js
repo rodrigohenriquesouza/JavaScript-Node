@@ -16,11 +16,22 @@ class ValidarFormulario {
     }
 
     eValido() {
-        let valid = true    
+        let valid = true   
 
         for(let campo of this.formulario.querySelectorAll('.validar')) {
-            console.log(campo)
+            let label = campo.previousElementSibling.innerText
+            if(!campo.value) {
+                this.erroMsg(campo, `O campo "${label}" precisa ser preenchido`)
+                valid = false
+            }
         }
+    }
+
+    erroMsg(campo, msg) {
+        const div = document.createElement('div')
+        div.innerHTML = msg
+        div.classList.add('error-text')
+        campo.insertAdjacentElement('afterend', div)
     }
 }
 
