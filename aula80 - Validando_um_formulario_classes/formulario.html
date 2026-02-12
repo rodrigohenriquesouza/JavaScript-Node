@@ -8,8 +8,24 @@
 </head>
 <body>
     <section class="container">
-        <form action="/" method="post">
-
+        <h1>Formulário de cadastro</h1>
+        <ul>
+            <li>Nenhum campo pode estar vazio</li>
+            <li>Usuário só pode conter letras e/ou números</li>
+            <li>Usuário deve ter entre 3 a 12 caracteres</li>
+            <li>Senha precisa ter entre 6 e 12 caracteres</li>
+        </ul>
+        <form action="/" method="post" class="form">
+            <label>Nome:</label>
+            <input type="text" class="nome">
+            <label>Sobrenome:</label>
+            <input type="text" class="sobrenome">
+            <label>Usuario</label>
+            <input class="usuario">
+            <label>Senha</label>
+            <input type="password" class="senha">
+            <label>Repetir senha</label>
+            <input type="password" class="repetir-senha">
         </form>
     </section>
 </body>
