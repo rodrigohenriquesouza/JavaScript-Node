@@ -27,7 +27,9 @@ class ValidaForm {
                 valid = false
             }
 
-            if(input.classList.contains())
+            if(input.classList.contains('cpf')) {
+                this.ValidaCPF()
+            }
         }
     }
 
