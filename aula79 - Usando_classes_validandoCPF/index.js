@@ -43,9 +43,9 @@ class ValidaCPF {
 }
 const cpf = new ValidaCPF('073.053.810-98')
 
-if (cpf.valida()) {
+/* if (cpf.valida()) {
     console.log('CPF VALIDO')
 } else {
     console.log('CPF INVALIDO')
 }
-
+ */

@@ -18,9 +18,14 @@ class ValidarFormulario {
     eValido() {
         let valid = true   
 
-        for(let campo of this.formulario.querySelectorAll('.validar')) {
+        for(let msgErro of this.formulario.querySelectorAll('.msg-erro')) {
+            msgErro.remove()
+        }
+
+         for(let campo of this.formulario.querySelectorAll('.validar')) {
+
             let label = campo.previousElementSibling.innerText
-            if(!campo.value) {
+            if(!campo.value) {  
                 this.erroMsg(campo, `O campo "${label}" precisa ser preenchido`)
                 valid = false
             }
@@ -30,7 +35,7 @@ class ValidarFormulario {
     erroMsg(campo, msg) {
         const div = document.createElement('div')
         div.innerHTML = msg
-        div.classList.add('error-text')
+        div.classList.add('msg-erro')
         campo.insertAdjacentElement('afterend', div)
     }
 }
