@@ -5,7 +5,7 @@ class ValidaFormulario {
     }
 
     eventos() {
-        this.formulario.addEventListener('submite', e => {
+        this.formulario.addEventListener('submit', e => {
             this.handleSubmit(e)
         })
     }
