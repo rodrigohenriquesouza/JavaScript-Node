@@ -13,7 +13,31 @@ class ValidaForm {
     handleSubmit(e) {
         e.preventDefault()
         const inputsValidados = this.inputsValids()
-        const senhasValidadas
+        const senhasValidadas = this.passwordValids()
+
+        if(inputsValidados && senhasValidadas) {
+            alert('Formulario feito sozinho enviado!')
+            this.formulario.submit()
+        }
+    }
+
+    passwordValids() {
+        let valid = true
+
+        const senha = document.querySelector('.senha')
+        const repeteSenha = document.querySelector('.repetir-senha')
+
+        if(senha.length !== repeteSenha.length) {
+            this.throwError(senha, 'As senhas devem ser iguais!')
+            this.throwError(repeteSenha, 'As senhas devem ser iguais!')
+            valid = false
+        }
+
+        if(senha.length < 6 || senha.length > 12) {
+            this.throwError(senha, 'Deve ter de 6 a 12 caracteres')
+            valid = false
+        }
+        return valid
     }
 
     inputsValids() {
@@ -39,6 +63,7 @@ class ValidaForm {
                 if(!this.validUser(input)) valid = false
             }
     }
+    return valid
 }
 
     validUser(input) {
@@ -51,7 +76,7 @@ class ValidaForm {
             this.throwError(input, 'Usuário deve conter apenas letras e/ou numeros')
             valid = false
         }
-
+        return valid
     }
 
     validaCPF(input) {
