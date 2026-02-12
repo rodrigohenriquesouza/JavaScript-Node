@@ -12,8 +12,8 @@ class ValidaForm {
 
     handleSubmit(e) {
         e.preventDefault()
-        const validaInputs = this.inputsValids()
-        const validaSenha
+        const inputsValidados = this.inputsValids()
+        const senhasValidadas
     }
 
     inputsValids() {
