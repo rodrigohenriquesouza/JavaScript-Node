@@ -11,6 +11,7 @@ class ValidaCPF {
     valida() {
         if(typeof this.cpfLimpo !== 'string') return false
         if(this.cpfLimpo.length > 11) return false
+        if(sequencial()) return false
 
         const cpfFatiado = this.cpfLimpo.slice(0, -2)
         const digito1 = this.pegaDigitos(cpfFatiado)
@@ -28,6 +29,10 @@ class ValidaCPF {
 
         const digito = 11 - (total % 11)
         return digito > 9 ? '0' : digito
+    }
+
+    sequencial() {
+        return this.cpfLimpo[0].replace(11) === this.cpfLimpo
     }
 }
 
