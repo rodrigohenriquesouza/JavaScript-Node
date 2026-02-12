@@ -9,6 +9,11 @@ class ValidaForm {
             this.handleSubmit(e)
         })
     }
+
+    handleSubmit(e) {
+        e.preventDefault()
+        
+    }
 }
 
 const form = new ValidaForm()
