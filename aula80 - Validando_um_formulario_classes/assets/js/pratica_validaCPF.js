@@ -19,6 +19,15 @@ class ValidaCPF {
 
     pegaDigitos(cpfFatiado) {
         const arrayCPF = Array.from(cpfFatiado)
+        let regressor = arrayCPF.length + 1
+        const total = arrayCPF.reduce((acml, nCPF) => {
+            acml += Number(nCPF) * regressor
+            regressor--
+            return acml
+        }, 0)
+
+        const digito = 11 - (total % 11)
+        return digito > 9 ? '0' : digito
     }
 }
 
