@@ -33,7 +33,7 @@ class ValidaForm {
             valid = false
         }
 
-        if(senha.length < 6 || senha.length > 12) {
+        if(senha.value.length < 6 || senha.value.length > 12) {
             this.throwError(senha, 'Deve ter de 6 a 12 caracteres')
             valid = false
         }
