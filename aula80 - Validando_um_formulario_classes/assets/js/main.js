@@ -12,7 +12,13 @@ class ValidaFormulario {
 
     handleSubmit(e) {
         e.preventDefault()
-        
+        const camposValidos = this.camposSaoValidos()
+    }
+
+    camposSaoValidos() {
+        let valid = true
+
+        for(let campo of this.formulario.querySelectorAll('.validar'))
     }
 }
 
