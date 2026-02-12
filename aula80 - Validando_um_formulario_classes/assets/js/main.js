@@ -12,8 +12,15 @@ class ValidarFormulario {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log('Teste de evento...')
-    
+        const camposValidos = this.eValido()
+    }
+
+    eValido() {
+        let valid = true    
+
+        for(let campo of this.formulario.querySelectorAll('.validar')) {
+            console.log(campo)
+        }
     }
 }
 
