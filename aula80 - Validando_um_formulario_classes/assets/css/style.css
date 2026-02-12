@@ -60,7 +60,8 @@ form button:hover {
     background: var(--primary-color-dark);
 }
 
-.msg-erro {
-    font-size: 16px;
+
+.error-text {
+    font-size: 1em;
     color: red;
 }
