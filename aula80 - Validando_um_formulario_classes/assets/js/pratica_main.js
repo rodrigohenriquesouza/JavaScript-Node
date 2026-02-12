@@ -26,6 +26,8 @@ class ValidaForm {
                 this.throwError(input, `O ${label} precisa ser preenchido!.`)
                 valid = false
             }
+
+            if(input.classList.contains())
         }
     }
 
