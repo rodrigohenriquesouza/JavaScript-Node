@@ -12,7 +12,7 @@ class ValidaFormulario {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log('Formulario não enviado...')
+        
     }
 }
 
