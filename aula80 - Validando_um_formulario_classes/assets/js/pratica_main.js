@@ -12,7 +12,12 @@ class ValidaForm {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log('teste do evento')
+        const validaInputs = this.inputsValids()
+    }
+
+    inputsValids() {
+
+        
     }
 }
 
