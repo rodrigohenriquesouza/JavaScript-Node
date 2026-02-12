@@ -10,12 +10,15 @@ class ValidaCPF {
 
     valida() {
         if(typeof this.cpfLimpo !== 'string') return false
-        if(this.cpfLimpo.length > 11) return false
-        if(sequencial()) return false
+        if(this.cpfLimpo.length !== 11) return false
+        if(this.sequencial()) return false
 
         const cpfFatiado = this.cpfLimpo.slice(0, -2)
         const digito1 = this.pegaDigitos(cpfFatiado)
-        const digito2 = this.pegaDigitos(cpfFatiado)
+        const digito2 = this.pegaDigitos(cpfFatiado + digito1)
+        const cpfCompleto = cpfFatiado + digito1 + digito2
+
+        return cpfCompleto === this.cpfLimpo
     }
 
     pegaDigitos(cpfFatiado) {
@@ -28,13 +31,13 @@ class ValidaCPF {
         }, 0)
 
         const digito = 11 - (total % 11)
-        return digito > 9 ? '0' : digito
+        return digito > 9 ? '0' : String(digito)
     }
 
     sequencial() {
-        return this.cpfLimpo[0].replace(11) === this.cpfLimpo
+        return this.cpfLimpo[0].replace(this.cpfLimpo.length) === this.cpfLimpo
     }
 }
 
 const cpf = new ValidaCPF('482.085.428.30')
-cpf.valida()
+
