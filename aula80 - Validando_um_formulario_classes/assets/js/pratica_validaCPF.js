@@ -35,6 +35,6 @@ class ValidaCPF {
     }
 
     sequencial() {
-        return this.cpfLimpo[0].replace(this.cpfLimpo.length) === this.cpfLimpo
+        return this.cpfLimpo[0].repeat(this.cpfLimpo.length) === this.cpfLimpo
     }
 }
