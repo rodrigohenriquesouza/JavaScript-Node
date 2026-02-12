@@ -27,7 +27,8 @@ class ValidaForm {
 
     throwError(input, msg) {
         const divMsg = document.createElement('div')
-
+        divMsg.innerHTML = msg
+        input.insertAdjacentElement('afterend', divMsg)
     }
 }
 
