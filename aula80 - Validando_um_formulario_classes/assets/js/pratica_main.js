@@ -17,7 +17,9 @@ class ValidaForm {
 
     inputsValids() {
 
-        
+        for(let input of this.formulario.querySelectorAll('.validar')) {
+            console.log(input)
+        }
     }
 }
 
