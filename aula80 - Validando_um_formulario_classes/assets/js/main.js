@@ -48,7 +48,7 @@ class ValidaFormulario {
             valid = false
         }
 
-        if(!usuario.match(/^[a-zA-Z0-9]$/g)) {
+        if(!usuario.match(/^[a-zA-Z0-9]+$/)) {
             this.criaErro(campo, 'Nome de usuário precisa conter apenas letras e/ou números.')
             valid = false
         }
