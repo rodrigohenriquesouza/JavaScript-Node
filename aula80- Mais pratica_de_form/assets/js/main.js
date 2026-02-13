@@ -13,18 +13,27 @@ class Form {
     handleSubmit(e) {
         e.preventDefault()
 
-        const fieldsValid = this.fieldsValid()
+        const fielsdValid = this.fieldsValid()
     }
 
     fieldsValid() {
-        for(let field of this.form.querySelectorAll('#valid')) {
+        let valid = true
+
+        for(let field of this.form.querySelectorAll('.valid')) {
+            const label = field.previousElementSibling.innerText
             if(!field.value) {
-                this.throwError(field, `O campo precisa ser preenchido`)
+                this.throwError(field, `O ${label} precisa ser preenchido`)
+                
             }
         }
+        return valid
     }
 
-    
+    throwError(field, message) {
+        const messageError = document.createElement('div')
+        messageError.innerHTML = message
+        field.insertAdjacentElement('afterend', messageError)
+    }
 }
 
 const form = new Form()
