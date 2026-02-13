@@ -13,7 +13,27 @@ class Form {
     handleSubmit(e) {
         e.preventDefault()
 
-        const fielsdValid = this.fieldsValid()
+        const fieldsValid = this.fieldsValid()
+        const passwordsValid = this.passwordValid()
+        if(fieldsValid && )
+    }
+
+    passwordValid() {
+        let valid = true
+
+        const password = document.querySelector('.password')
+        const repeatPassword = document.querySelector('.repeat-password')
+
+        if(password.value.length < 6 || password.value.length > 12) {
+            this.throwError(password, 'Senha deve conter de 6 a 12 caracteres')
+            valid = false
+        }
+        if(password.value.length !== repeatPassword.value.length) {
+            this.throwError(password, 'As senhas devem ser iguais')
+            valid = false
+        }
+
+        return valid
     }
 
     fieldsValid() {
@@ -36,6 +56,7 @@ class Form {
             if(field.classList.contains('user')) {
                 if(!this.validUser(field)) valid = false    
             }
+
         }
         return valid
     }
