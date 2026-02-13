@@ -1,10 +1,18 @@
-class Formulario {
+class Form {
     constructor() {
-        this.formulario = document.querySelector('.formulario')
-        this.eventos()
+        this.form = document.querySelector('.form')
+        this.event()
     }
 
-    eventos() {
-        
+    event() {
+        this.form.addEventListener('submit', e => {
+            this.handleSubmit(e)
+        })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
     }
 }
+
+const form = new Form()
