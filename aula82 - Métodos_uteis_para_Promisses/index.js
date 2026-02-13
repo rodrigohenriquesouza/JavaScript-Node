@@ -44,7 +44,7 @@ function baixaPagina() {
     if(emCache) {
         return Promise.resolve('Esta na página')
     } else {
-        return esperaAi('Página carregando', 2000)
+        return Promise.reject('Página carregando', 2000)
     }
 }
 
@@ -53,5 +53,5 @@ baixaPagina()
  console.log(pagina)
 })
  .catch(erro => {
-console.log(erro)
+console.log('É um erro:', erro)
 })
