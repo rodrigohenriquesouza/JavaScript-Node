@@ -15,7 +15,11 @@ class Form {
 
         const fieldsValid = this.fieldsValid()
         const passwordsValid = this.passwordValid()
-        if(fieldsValid && )
+
+        if(fieldsValid && passwordsValid) {
+            this.form.submit()
+            alert('Form complete!')
+        }
     }
 
     passwordValid() {
@@ -28,7 +32,7 @@ class Form {
             this.throwError(password, 'Senha deve conter de 6 a 12 caracteres')
             valid = false
         }
-        if(password.value.length !== repeatPassword.value.length) {
+        if(password.value !== repeatPassword.value) {
             this.throwError(password, 'As senhas devem ser iguais')
             valid = false
         }
