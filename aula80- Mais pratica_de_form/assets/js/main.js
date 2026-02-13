@@ -12,6 +12,12 @@ class Form {
 
     handleSubmit(e) {
         e.preventDefault()
+
+        const fieldsValid = this.fieldsValid()
+    }
+
+    fieldsValid() {
+        
     }
 }
 
