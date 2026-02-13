@@ -12,7 +12,7 @@ function esperaAi(msg, tempo) {
         }
 
         setTimeout(() => {
-            resolve(msg.toUpperCase() + '- Passei na promisse')
+            resolve(msg.toUpperCase())
         }, tempo)
     })
 }
@@ -37,3 +37,21 @@ const promises = [
 .then(resolvido => {
     console.log(resolvido)
 }) */
+
+function baixaPagina() {
+    const emCache = false
+
+    if(emCache) {
+        return Promise.resolve('Esta na página')
+    } else {
+        return esperaAi('Página carregando', 2000)
+    }
+}
+
+baixaPagina()
+.then(pagina => {
+ console.log(pagina)
+})
+ .catch(erro => {
+console.log(erro)
+})
