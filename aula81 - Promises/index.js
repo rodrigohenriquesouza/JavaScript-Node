@@ -15,18 +15,23 @@ function esperaAi(msg, tempo) {
     })
 }
 
-esperaAi('Conexão com BD', randomN(1, 2)).then(estadoBD => {
-    console.log(estadoBD)
-    return esperaAi('Buscando os dados da base', randomN(1, 2)).then(estadoBD => {
-        console.log(estadoBD)
-        return esperaAi(232323, randomN(1, 2)).then(estadoBD => {
-            console.log(estadoBD)
-        }).then(() => {
-            console.log('FIM DOS DADOS')
-        }).catch(e => {
-            console.log('ERRO:', e)
-        })
-    })
+esperaAi('Acessando BD', randomN(1, 2)).then(estadoAcesso => {
+    console.log(estadoAcesso)
+    return esperaAi('Buscando no BD', randomN(1, 2))
+})
+.then(estadoAcesso => {
+    console.log(estadoAcesso)
+    return esperaAi('Validando BD', randomN(1, 2))
+})
+.then(estadoAcesso => {
+    console.log(estadoAcesso)
+    return esperaAi('Sucesso', randomN(1, 2))
+})
+.then(sucesso => {
+    console.log(sucesso)
+})
+.catch(erro => {
+    console.log('ERRO:', erro)
 })
 
 console.log('EXIBE ANTES, POIS PROMISSES SAO ASSINCRONAS')
