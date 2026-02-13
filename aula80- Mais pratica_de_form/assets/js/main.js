@@ -17,8 +17,14 @@ class Form {
     }
 
     fieldsValid() {
-        
+        for(let field of this.form.querySelectorAll('#valid')) {
+            if(!field.value) {
+                this.throwError(field, `O campo precisa ser preenchido`)
+            }
+        }
     }
+
+    
 }
 
 const form = new Form()
