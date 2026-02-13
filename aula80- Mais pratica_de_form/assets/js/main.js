@@ -36,7 +36,25 @@ class Form {
                     valid = false
                 }
             }
+            if(field.classList.contains('user')) {
+                if(!this.validUser(field)) {
+                    
+                    valid = false
+                }
+            }
+        }
+        return valid
+    }
 
+    validUser(userfield) {
+        let valid = true
+        const user = userfield.value
+        if(!user.match(/^[a-zA-Z0-9]+$/)) {
+            this.throwError(userfield, 'User deve conter apenas letras e/ou números')
+            valid = false
+        }
+        if(user.length < 3 || user.length > 12) {
+            this.throwError(userfield, 'User deverá ter entre 3 a 12 caracteres')
         }
         return valid
     }
