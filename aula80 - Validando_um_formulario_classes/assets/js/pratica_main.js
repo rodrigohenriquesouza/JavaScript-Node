@@ -27,13 +27,13 @@ class ValidaForm {       // class para validar formulario
         const senha = document.querySelector('.senha')
         const repeteSenha = document.querySelector('.repetir-senha')
 
-        if(senha.value.length !== repeteSenha.value.length) {
+        if(senha.value.length !== repeteSenha.value.length) {      // compara se sao identicos o valor e o tamanho dos campos senha e repetir-senha
             this.throwError(senha, 'As senhas devem ser iguais!')
             this.throwError(repeteSenha, 'As senhas devem ser iguais!')
             valid = false
         }
 
-        if(senha.value.length < 6 || senha.value.length > 12) {
+        if(senha.value.length < 6 || senha.value.length > 12) {               // limite os caracteres entre 3 a 12 caracteres
             this.throwError(senha, 'Deve ter de 6 a 12 caracteres')
             valid = false
         }
