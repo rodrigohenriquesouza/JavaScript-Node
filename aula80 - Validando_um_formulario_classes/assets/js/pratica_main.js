@@ -12,8 +12,8 @@ class ValidaForm {       // class para validar formulario
   
     handleSubmit(e) {                                          // lida com meu evento e o que fazer depois dele ser acionado
         e.preventDefault()
-        const inputsValidados = this.inputsValids()
-        const senhasValidadas = this.passwordValids()
+        const inputsValidados = this.inputsValids()            // metodos de validação do form
+        const senhasValidadas = this.passwordValids()          // metodos de validação do form
 
         if(inputsValidados && senhasValidadas) {               // compara se os inputs e as senhas são validas para dar submit
             alert('Formulario feito sozinho enviado!')
