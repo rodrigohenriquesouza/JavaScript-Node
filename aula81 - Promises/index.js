@@ -13,15 +13,7 @@ function esperaAi(msg, tempo) {
     })
 }
 
-esperaAi('ESPERA FRASE 1', randomN(1, 2)).then(frase => {
-    console.log(frase)
-    return esperaAi('ESPERA FRASE 2', randomN(1, 2)).then(frase => {
-        console.log(frase)
-        return esperaAi('ESPERA FRASE 3', randomN(1, 2)).then(frase => {
-            console.log(frase)
-        }).then(() => {
-            console.log('EXIBI POR ULTIMO')
-        })
-    }) 
+esperaAi('Conexao com BD', randomN(1, 2)).then(estadoBD => {
+    console.log(estadoBD)
+    return esperaAi('')
 })
-
