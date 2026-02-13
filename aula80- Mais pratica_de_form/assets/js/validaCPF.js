@@ -17,7 +17,7 @@ class ValidaCPF {
         const digito2 = this.takeDigits(cpfSlice + digito1)
         const cpfComplete = cpfSlice + digito1 + digito2
 
-        return cpfComplete === this.cpfCleam
+        return this.cpfCleam === cpfComplete
     }
 
     takeDigits(cpfSlice) {

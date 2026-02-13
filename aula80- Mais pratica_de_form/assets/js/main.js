@@ -27,10 +27,28 @@ class Form {
             const label = field.previousElementSibling.innerText
             if(!field.value) {
                 this.throwError(field, `O ${label} precisa ser preenchido`)
-                
+                valid = false
             }
+
+            if(field.classList.contains('cpf')) {
+                if(!this.validCPF(field)) {
+                    this.throwError(field, 'CPF INVÁLIDO')
+                    valid = false
+                }
+            }
+
         }
         return valid
+    }
+
+    validCPF(field) {
+
+        const cpf = new ValidaCPF(field.value)
+        if(!cpf.valid()) {
+            return false
+        }
+
+        return true
     }
 
     throwError(field, message) {
