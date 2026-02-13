@@ -13,7 +13,19 @@ function esperaAi(msg, tempo) {
     })
 }
 
-esperaAi('Conexao com BD', randomN(1, 2)).then(estadoBD => {
+esperaAi('Conexão com BD', randomN(1, 2)).then(estadoBD => {
     console.log(estadoBD)
-    return esperaAi('')
+    return esperaAi('Buscando os dados da base', randomN(1, 2)).then(estadoBD => {
+        console.log(estadoBD)
+        return esperaAi('Tratando os dados da base', randomN(1, 2)).then(estadoBD => {
+            console.log(estadoBD)
+        }).then(() => {
+            console.log('EXIBE OS DADOS NA TELA')
+        })
+    })
 })
+
+
+// buscando os dados da base
+// tratando os dados da base
+// exibe dados na tela
