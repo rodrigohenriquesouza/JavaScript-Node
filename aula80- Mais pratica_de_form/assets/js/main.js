@@ -31,16 +31,10 @@ class Form {
             }
 
             if(field.classList.contains('cpf')) {
-                if(!this.validCPF(field)) {
-                    this.throwError(field, 'CPF INVÁLIDO')
-                    valid = false
-                }
+                if(!this.validCPF(field)) valid = false
             }
             if(field.classList.contains('user')) {
-                if(!this.validUser(field)) {
-                    
-                    valid = false
-                }
+                if(!this.validUser(field)) valid = false    
             }
         }
         return valid
@@ -55,6 +49,7 @@ class Form {
         }
         if(user.length < 3 || user.length > 12) {
             this.throwError(userfield, 'User deverá ter entre 3 a 12 caracteres')
+            valid = false
         }
         return valid
     }
@@ -63,6 +58,7 @@ class Form {
 
         const cpf = new ValidaCPF(field.value)
         if(!cpf.valid()) {
+            this.throwError(field, 'CPF INVÁLIDO')
             return false
         }
 
