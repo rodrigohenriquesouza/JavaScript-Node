@@ -7,8 +7,8 @@ function randomN(min, max) {
 
 function esperaAi(msg, tempo) {
     return new Promise((resolve, reject) => {
-        if(typeof msg !== 'string') reject('BAD VALUE')
-            
+        if(typeof msg !== 'string') reject(new Error('ERRO'))
+
         setTimeout(() => {
             resolve(msg)
         }, tempo)
@@ -21,10 +21,10 @@ esperaAi('Conexão com BD', randomN(1, 2)).then(estadoBD => {
         console.log(estadoBD)
         return esperaAi(232323, randomN(1, 2)).then(estadoBD => {
             console.log(estadoBD)
-        }).catch(erro => {
-            console.log('ERRO:', erro)
         }).then(() => {
-            console.log('EXIBE OS DADOS NA TELA')
+            console.log('FIM DOS DADOS')
+        }).catch(e => {
+            console.log('ERRO:', e)
         })
     })
 })
