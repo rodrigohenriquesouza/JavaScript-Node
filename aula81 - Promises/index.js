@@ -25,7 +25,4 @@ esperaAi('Conexão com BD', randomN(1, 2)).then(estadoBD => {
     })
 })
 
-
-// buscando os dados da base
-// tratando os dados da base
-// exibe dados na tela
+console.log('EXIBE ANTES, POIS PROMISSES SAO ASSINCRONAS')
