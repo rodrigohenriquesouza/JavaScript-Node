@@ -13,8 +13,15 @@ async function paginaCarregada(elemento) {
   try {
      const href = elemento.getAttribute('href')
      const conteudoHREF = await fetch(href)
-  } catch(erro) {
 
+    if(conteudoHREF.status !== 200) throw new Error('Carregamento muito lento')
+
+     const textoHREF = await conteudoHREF.text()
+     mostraTexto(textoHREF)
+  } catch(erro) {
+    console.warn(erro)
   }
 
 }
+
+function mostraTexto()
