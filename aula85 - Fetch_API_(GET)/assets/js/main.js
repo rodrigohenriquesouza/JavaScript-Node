@@ -24,4 +24,7 @@ async function paginaCarregada(elemento) {
 
 }
 
-function mostraTexto()
+function mostraTexto(textoHREF) {
+  const res = document.querySelector('.resultado')
+  res.innerHTML = textoHREF
+}
