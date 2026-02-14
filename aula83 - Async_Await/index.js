@@ -37,20 +37,14 @@ function esperaAi(msg, tempo) {
 
 async function executaPromise() {
     try {
-    const fase1 =  esperaAi('Fase 1', 1000)
-    console.log(fase1)
-
-    setTimeout(() => {
-        console.log(`Promise estava pendente ${fase1}`)
-    }, 4000)
-
-    const fase2 = await esperaAi('Fase 2', rand())
-    console.log(fase2)
-    const fase3 = await esperaAi('Fase 3', rand())
-    console.log(fase3)
     
-    console.log('Terminamos na fase:', fase3)
-    
+     const resultados = await Promise.all([
+        esperaAi('TESTE 1', rand()),
+        esperaAi('TESTE 2', rand()),
+        esperaAi('TESTE 3', rand())
+        ])
+        
+        console.log(resultados)
     } catch(erro) {
         console.log(erro)
     }
