@@ -1,29 +1,28 @@
-
 document.addEventListener('click', e => {
-  const el = e.target;
-  const tag = el.tagName.toLowerCase();
+  const el = e.target
+  const tag = el.tagName.toLowerCase()
 
-  if (tag === 'a') {
-    e.preventDefault();
-    carregaPagina(el);
+  if(tag === 'a') {
+    e.preventDefault()
+    carregaPagina(el)
   }
-});
+})
 
 async function carregaPagina(el) {
-  try {
-    const href = el.getAtributte('href')
-    const response = await fetch(href)
-    if(response.status !== 200) throw new Error('ERROR NO ACESSO')
 
-    const html = await response.text()
-    carregaResultado(html)
-    
+  try {
+    const link = el.getAttribute('href')
+    const ajax = await fetch(link)
+    if(ajax.status !== 200) throw new Error('status esta ruim')
+
+   const conteudoLink = await ajax.text()
+   mostraConteudo(conteudoLink)
   } catch(e) {
     console.warn(e)
   }
 }
-function carregaResultado(response) {
-  const resultado = document.querySelector('.resultado');
-  resultado.innerHTML = response;
-}
 
+function mostraConteudo(conteudo) {
+  const divResultado = document.querySelector('.resultado')
+  divResultado.innerHTML = conteudo
+}
