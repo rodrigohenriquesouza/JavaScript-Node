@@ -38,7 +38,16 @@ function esperaAi(msg, tempo) {
 async function executaPromise() {
     try {
     
-        const ranking = await esperaAi('Ranking', rand())
+        const ranking = await Promise.all([
+            esperaAi('Ranking', rand()),
+            esperaAi('1', rand()),
+            esperaAi('2', rand()),
+            esperaAi('3', rand())
+        ])
+
+        console.log(ranking)
+
+/*         const ranking = await esperaAi('Ranking', rand())
         console.log(ranking)
 
         const rank1 = await esperaAi('1', rand())
@@ -48,8 +57,8 @@ async function executaPromise() {
         console.log(rank2)
 
         const rank3 = await esperaAi('3', rand())
-        console.log(rank3)
-        
+        console.log(rank3) */
+
 /*      const resultados = await Promise.all([
         esperaAi('TESTE 1', rand()),
         esperaAi('TESTE 2', rand()),
