@@ -1,4 +1,4 @@
-function randomNumber(min, max) {
+function rand(min = 0, max = 3) {
     min *= 1000
     max *= 1000
 
@@ -12,8 +12,45 @@ function esperaAi(msg, tempo) {
         }
 
         setTimeout(() => {
-            resolve(msg.toUpperCase())
+            resolve(msg.toUpperCase() + ' Passei na promise')
         }, tempo)
     })
 }
 
+/* esperaAi('Fase 1', randomNumber())
+.then(fase => {
+    console.log(fase)
+    return esperaAi('Fase 2', randomNumber())
+})
+.then(fase => {
+    console.log(fase)
+    return esperaAi('Fase 3', randomNumber())
+})
+.then(fase => {
+    console.log(fase)
+    return fase
+})
+.then(fase => {
+    console.log(`Terminamos na fase:${fase}`)
+})
+.catch(e => console.log(e)) */
+
+async function executaPromise() {
+    try {
+    const fase1 = await esperaAi('Fase 1', rand())
+    console.log(fase1)
+    const fase2 = await esperaAi(23, rand())
+    console.log(fase2)
+    const fase3 = await esperaAi('Fase 3', rand())
+    console.log(fase3)
+    
+    console.log('Terminamos na fase:', fase3)
+    
+    } catch(erro) {
+        console.log(erro)
+    }
+
+    
+}
+
+executaPromise()
