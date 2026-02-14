@@ -44,3 +44,11 @@ function carregaResultado(response) {
   const resultado = document.querySelector('.resultado');
   resultado.innerHTML = response;
 }
+
+fetch('pagina3.html')
+.then(response => {
+  if(response.status !== 200) throw new Error('lancei erro 404')
+    return response.text()
+})
+.then(html => console.log(html))
+.catch(erro => console.log(erro))
