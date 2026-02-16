@@ -2,6 +2,10 @@
 .then(resposta => resposta.json())
 .then(json => carregaJsonNaPag(json))
  */
+
+axios('pessoas.json')
+.then(resposta => carregaJsonNaPag(resposta.data))
+
 function carregaJsonNaPag(json) {
   const table = document.createElement('table')
   for(pessoa of json) {
