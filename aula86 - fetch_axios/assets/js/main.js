@@ -4,7 +4,7 @@
  */
 
 axios('pessoas.json')
-.then(json => carregaJsonNaPag(json.data)
+.then(json => carregaJsonNaPag(json.data))
 
 function carregaJsonNaPag(json) {
   const table = document.createElement('table')
@@ -28,5 +28,3 @@ function carregaJsonNaPag(json) {
   const res = document.querySelector('.resultado')
   res.appendChild(table)
 }
-
-carregaJsonNaPag()
