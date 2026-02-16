@@ -4,7 +4,7 @@
  */
 
 axios('pessoas.json')
-.then(resposta => carregaJsonNaPag(resposta.data))
+.then(json => carregaJsonNaPag(json.data)
 
 function carregaJsonNaPag(json) {
   const table = document.createElement('table')
