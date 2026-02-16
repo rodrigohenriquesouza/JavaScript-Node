@@ -18,7 +18,7 @@ async function paginaCarregada(elemento) {
 
      const textoHREF = await conteudoHREF.text()
      mostraTexto(textoHREF)
-  } catch(erro) {
+  } catch (erro) {
     console.warn(erro)
   }
 
