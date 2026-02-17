@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gera": "webpack -w"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.6",
