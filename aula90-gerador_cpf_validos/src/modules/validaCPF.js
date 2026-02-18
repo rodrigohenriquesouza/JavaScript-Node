@@ -21,7 +21,7 @@ export default class ValidaCPF {
         return cpfCOMPLETO === this.cpfLIMPADO
     }
 
-    pegaDigito(cpfSeparado) {
+    static pegaDigito(cpfSeparado) {
         const arrayCPF = Array.from(cpfSeparado)
         let multiplica = arrayCPF.length + 1
         const total = arrayCPF.reduce((acml, nCPF) => {
@@ -39,3 +39,5 @@ export default class ValidaCPF {
     }
 
 }
+
+console.log('Cheguei aqui')
