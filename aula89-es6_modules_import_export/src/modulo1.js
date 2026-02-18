@@ -5,7 +5,7 @@ export const idade = 23
 const teste = 'Não exporta'
 
 
-export function soma(a, b) {
+export default function soma(a, b) {
     return a + b
 }
 
