@@ -1,7 +1,5 @@
-// algoritmo validador de CPF 
-// formula 11 - (total % 11)
 
-class ValidaCPF {
+export default class ValidaCPF {
     constructor(CPF) {
         Object.defineProperty(this, 'cpfLIMPADO', {
             get() {
@@ -41,11 +39,3 @@ class ValidaCPF {
     }
 
 }
-/* const cpf = new ValidaCPF('073.053.810-98') */
-
-/* if (cpf.valida()) {
-    console.log('CPF VALIDO')
-} else {
-    console.log('CPF INVALIDO')
-}
- */
