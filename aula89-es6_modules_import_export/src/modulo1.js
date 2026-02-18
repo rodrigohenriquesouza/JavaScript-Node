@@ -6,4 +6,4 @@ function soma(a, b) {
     return a + b
 }
 
-export { nome }
+export { nome, sobrenome, idade, soma }

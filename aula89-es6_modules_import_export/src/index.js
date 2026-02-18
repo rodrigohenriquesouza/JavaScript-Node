@@ -1,3 +1,6 @@
-import { nome } from './modulo1'
+import { nome, sobrenome, idade, soma } from './modulo1'
 
-console.log(nome)
+const nome = 'Miranda'
+
+console.log(nome, sobrenome, idade)
+console.log(soma(5, 5))
