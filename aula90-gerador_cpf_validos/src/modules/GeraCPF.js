@@ -1,24 +1,25 @@
-import ValidaCPF from './ValidaCPF'
+import ValidadorCPF from './ValidaCPF'
 
 export default class GeraCPF {
-    rand(min = 100000000, max = 999999999) {
-        return String(Math.floor(Math.random() * (max - min) + min))    
+
+    geraNum(min = 100000000, max = 999999999) {
+        return String(Math.floor(Math.random() * (max - min) - min))
     }
 
-    formatado(cpf) {
-        return (
-            cpf.slice(0, 3) + '.' +
-            cpf.slice(3, 6) + '.' +
-            cpf.slice(6, 9) + '-' +
-            cpf.slice(9, 11)
+    formataCPF(cpf) {
+        return(
+        cpf.slice(0, 3) + '.' +
+        cpf.slice(3, 6) + '.' +
+        cpf.slice(6, 9) + '-' +
+        cpf.slice(9, 11)
         )
     }
 
-    geraNovoCpf() {
-        const cpfSemDigito = this.rand()
-        const digito1 = ValidaCPF.pegaDigito(cpfSemDigito)
-        const digito2 = ValidaCPF.pegaDigito(cpfSemDigito + digito1)
-        const novoCpf = cpfSemDigito + digito1 + digito2
-        return this.formatado(novoCpf)
+    geraCPF() {
+        const cpfCortado = this.geraNum()
+        const digito1 = ValidadorCPF.pegaDigito(cpfCortado)
+        const digito2 = ValidadorCPF.pegaDigito(cpfCortado + digito1)
+        const cpfCOMPLETO = cpfCortado + digito1 + digito2
+        return this.formataCPF(cpfCOMPLETO)
     }
 }
