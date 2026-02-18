@@ -1,6 +1,6 @@
-import { nome, sobrenome, idade, soma } from './modulo1'
+import { nome as nome2, sobrenome, idade, soma } from './modulo1'
 
 const nome = 'Miranda'
 
-console.log(nome, sobrenome, idade)
+console.log(nome2, sobrenome, idade)
 console.log(soma(5, 5))
