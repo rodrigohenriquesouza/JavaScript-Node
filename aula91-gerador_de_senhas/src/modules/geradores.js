@@ -18,6 +18,3 @@ export default function geraSenha(qtd, maiusculas, minusculas, numeros, simbolos
 
     return arraySenha.join('').slice(0, qtd)
 }
-
-
-
