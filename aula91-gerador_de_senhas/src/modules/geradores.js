@@ -4,7 +4,20 @@ const geraMinusculas = () => String.fromCharCode(rand(97, 123))
 const geraNumero = () => String.fromCharCode(rand(48, 58))
 const simbolos = '.,/?^~`´[&%]\|#@!(*{}_'
 const geraSimbolo = () => simbolos[rand(0, simbolos.length)]
-console.log(geraMaiscula())
-console.log(geraMinusculas())
-console.log(geraNumero())
-console.log(geraSimbolo())
+
+function geraSenha(qtd, maiusculas, minusculas, numeros, simbolos) {
+    const arraySenha = []
+    qtd = Number(qtd)
+
+    for(let i = 0; i < qtd; i++) {
+        maiusculas && arraySenha.push(geraMaiscula())
+        minusculas && arraySenha.push(geraMinusculas())
+        numeros && arraySenha.push(geraNumero())
+        simbolos && arraySenha.push(geraSimbolo())
+    }
+
+    return arraySenha.join('').slice(0, qtd)
+}
+
+geraSenha(4, true, true ,true, true)
+
