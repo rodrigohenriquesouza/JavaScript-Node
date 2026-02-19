@@ -72,3 +72,9 @@ form button:active {
 .bad {
     background: #f80404d2;
 }
+
+.senha-gerada {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin: 40px 0;
+}
