@@ -78,3 +78,14 @@ form button:active {
     color: var(--primary-color);
     margin: 40px 0;
 }
+
+button {
+    display: block;
+    margin: 40px 0;
+    font-size: 1em;
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+}
