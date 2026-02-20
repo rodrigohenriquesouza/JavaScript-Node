@@ -1,4 +1,20 @@
+class Pessoa {
+    constructor(nome) {
+        this.nome = nome
+    }
+}
 
+
+const nome = 'Rodrigo'
+const idade = 23
+const sobrenome = 'Souza'
+const hobby = 'Jogos'
+
+module.exports = {
+    nome, idade, sobrenome, hobby, Pessoa
+}
+
+exports.Pessoa = Pessoa
 
 
 
