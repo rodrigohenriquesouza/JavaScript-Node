@@ -1,12 +1,12 @@
 import geraSenha from './geradores'
 
-const senhaGerada = document.querySelector('.senha-gerada')
-const qtdCaracteres = document.querySelector('.qtd-caracter')
-const chkMaiusculas = document.querySelector('.chk-maiuscula')
-const chkMinusculas = document.querySelector('.chk-minuscula')
-const chkNumeros = document.querySelector('.chk-numeros')
-const chkSimbolos = document.querySelector('.chk-simbolos')
-const gerarSenha = document.querySelector('.gerar-senha')
+const senhaGerada = document.querySelector('.senha')
+const caracteres = document.querySelector('.qtd-carac')
+const lMaiusculas = document.querySelector('.chk-maiusculas')
+const lMinusculas = document.querySelector('.chk-minusculas')
+const numeros = document.querySelector('.chk-numeros')
+const simbolos = document.querySelector('.chk-simbolos')
+const gerarSenha = document.querySelector('.gera-senha')
 
 export default () => {
     gerarSenha.addEventListener('click', () => {
@@ -16,11 +16,11 @@ export default () => {
 
 function gera() {
     const senha = geraSenha(
-        qtdCaracteres.value, 
-        chkMaiusculas.checked,
-        chkMinusculas.checked,
-        chkNumeros.checked,
-        chkSimbolos.checked)
-
-    return senha || 'Selecione as opções'
+        caracteres.value,
+        lMaiusculas.checked,
+        lMinusculas.checked,
+        numeros.checked,
+        simbolos.checked
+    )
+    return senha
 }
