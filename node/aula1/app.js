@@ -1,7 +1,7 @@
-const { nome, sobrenome, falaNome} = require('./mod1')
+/* const { nome, sobrenome, falaNome} = require('./mod1')
 
 console.log(nome)
-console.log(falaNome())
+console.log(falaNome()) */
 
 
 /* const mod1 = require('./mod1')
