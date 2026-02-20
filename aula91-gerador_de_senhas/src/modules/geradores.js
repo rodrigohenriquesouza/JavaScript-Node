@@ -17,7 +17,6 @@ export default function geraSenha(qtd, maiusculas, minusculas, numeros, simbolos
         minusculas && senha.push(geraMinusculas())
         numeros && senha.push(geraNumeros())
         simbolos && senha.push(geraSimbolos())
-        console.log(senha)
     }
         return senha.join('').slice(0, qtd)
 }
