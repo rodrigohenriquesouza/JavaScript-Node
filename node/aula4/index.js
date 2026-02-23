@@ -13,7 +13,7 @@ function walk(files) {
     }
 }
 
-readdir()
+readdir(path.resolve('E:/estudos/JavaScript-Node/node'))
 /* fs.readdir(path.resolve(__dirname))
     .then(files => console.log(files))
     .catch(e => console.log(e))
