@@ -14,11 +14,16 @@ class validadorCPF {
         
         const cpfArg = this.cpfLimpado
         const cpfCortado = cpfArg.slice(0, -2)
-        const digito1 = comparaDigito(cpfCortado)
-        const digito2 = comparaDigito(cpfCortado + digito1)
+        const digito1 = this.comparaDigito(cpfCortado)
+        const digito2 = this.comparaDigito(cpfCortado + digito1)
+        const cpfCompleto = cpfCortado + digito1 + digito2
+
+        if(cpfCompleto === this.cpfLimpado) {
+           return console.log('DEU CERTO!')
+        }
     }
 
-    criaDigito(cpfCortado) { 
+    comparaDigito(cpfCortado) { 
         const cpfArray = Array.from(cpfCortado)
         let regressiva = cpfCortado.length + 1
 
@@ -38,4 +43,7 @@ class validadorCPF {
 }
 
 const cpf1 = new validadorCPF('482-085-428-30')
+cpf1.segurancaCPF()
+
+
 
