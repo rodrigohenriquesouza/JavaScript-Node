@@ -10,6 +10,7 @@ class validadorCPF {
     segurancaCPF() {
         if(typeof this.cpfLimpado !== 'string') return
         if(this.cpfLimpado.length !== 11) return
+        if(this.veRepeticao()) return
         
         const cpfArg = this.cpfLimpado
         const cpfCortado = cpfArg.slice(0, -2)
@@ -17,8 +18,18 @@ class validadorCPF {
         const digito2 = comparaDigito(cpfCortado + digito1)
     }
 
-    criaDigito(cpfCortado) {
-        
+    criaDigito(cpfCortado) { 
+        const cpfArray = Array.from(cpfCortado)
+        let regressiva = cpfCortado.length + 1
+
+        const total = cpfArray.reduce((acml, nCPF) => {
+            acml += (Number(nCPF) * regressiva)
+            regressiva--
+            return acml
+        }, 0)
+
+        const digito = 11 - (total % 11)
+        return digito > 9 ? '0' : String(digito)
     }
 
     veRepeticao() {
@@ -28,4 +39,3 @@ class validadorCPF {
 
 const cpf1 = new validadorCPF('482-085-428-30')
 
-console.log(cpf1.veRepeticao())
