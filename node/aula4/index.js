@@ -1,4 +1,6 @@
-const fs = require('fs')
+const fs = require('fs').promises
 const path = require('path')
 
-console.log(__dirname)
+fs.readdir(path.resolve(__dirname))
+    .then(files => console.log(files))
+    .catch(e => console.log(e))
