@@ -14,9 +14,18 @@ async function walkFiles(files, rootDir) {
 
     if(stats.isDirectory()) {
         leDiretorios(fileFullPath)
+        continue
     }
 
-        console.log(file, stats.isDirectory())
+    if(/node_modules/g.test(fileFullPath)) {
+        continue
+    }
+
+    if(!/.css$/g.test(fileFullPath) &&  !/.html$/g.test(fileFullPath)){
+        continue
+    }
+
+        console.log(fileFullPath)
     }
 }
 
