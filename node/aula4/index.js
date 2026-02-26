@@ -4,12 +4,14 @@ const path = require('path')
 async function leDiretorios(rootDir) {
     rootDir = rootDir || path.resolve(__dirname)
     const files = await fs.readdir(rootDir)
-    walkFiles(files)
+    walkFiles(files, rootDir)
 }
 
-function walkFiles(files) {
+async function walkFiles(files, rootDir) {
     for(let file of files) {
-        console.log(file)
+    const fileFullPath = path.resolve(rootDir, file)
+    const stats = await fs.stat(fileFullPath)
+        console.log(file, stats.isDirectory())
     }
 }
 
