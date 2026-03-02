@@ -10,5 +10,6 @@ procuraArquivo(files, rootDir)
 async function procuraArquivo(files, rootDir) {
     for(let file of files) {
         const caminhoArquivo = path.resolve(rootDir, file)
+        const status = fs.stat(caminhoArquivo)
     }
 }
