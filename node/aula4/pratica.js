@@ -3,4 +3,5 @@ const path = require('path')
 
 async function arquivos(rootDir) {
     rootDir = rootDir || path.resolve(__dirname)
+    const arquivos = fs.readdir(rootDir)
 }
