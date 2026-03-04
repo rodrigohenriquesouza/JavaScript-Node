@@ -3,5 +3,6 @@ const path = require('path')
 
 async function arquivos(rootDir) {
     rootDir = rootDir || path.resolve(__dirname)
-    const arquivos = fs.readdir(rootDir)
+    const arquivos = await fs.readdir(rootDir)
+    procuraArquivo(arquivos, rootDir)
 }
