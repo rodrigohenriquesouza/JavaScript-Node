@@ -3,26 +3,20 @@ const path = require('path')
 
 async function diretorios(rootDir) {
     rootDir = rootDir || path.resolve(__dirname)
-    const arquivos = await fs.readdir(rootDir)
-    procuraArquivo(rootDir, arquivos)
+    const files = await fs.readdir(rootDir)
+    procuraFiles(rootDir, files)
 }
 
-async function procuraArquivo(rootDir, arquivos) {
+async function procuraFiles(rootDir, files) {
+    for(let file of files) {
+        const caminhoFile = path.resolve(rootDir, file)
+        const statusFile = await fs.stat(caminhoFile)
 
-    for(let arquivo of arquivos) {
-        const caminhoCompletoArquivo = path.resolve(rootDir, arquivo)
-        const status = await fs.stat(caminhoCompletoArquivo)
-
-        if(status.isDirectory()) {
-            diretorios(caminhoCompletoArquivo)
+        if(statusFile.isDirectory()) {
+            diretorios(caminhoFile)
             continue
         }
-
-        if(!/.html/g.test(caminhoCompletoArquivo)) {
-            continue
-        }
-        console.log(caminhoCompletoArquivo)
-    }   
+    }
 }
 
 diretorios('E:/estudos/JavaScript-Node')
