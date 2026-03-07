@@ -3,8 +3,8 @@ const caminho = path.resolve(__dirname, 'praticandoNode.json')
 const leArquivo = require('./modules/lerPratica')
 
 
-async function ler(dados) {
-    const dados = await leArquivo(dados)
+async function ler(caminho) {
+    const dados = await leArquivo(caminho)
     trataDados(dados)
 }
 
@@ -12,6 +12,8 @@ function trataDados(dados) {
     dados = JSON.parse(dados)
     dados.forEach(valor => console.log(valor))
 }
+
+ler(caminho)
 
 // escreve arquivo json const escreveArquivo = require('./modules/escreverPratica')   
 
