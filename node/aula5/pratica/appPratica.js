@@ -8,6 +8,10 @@ async function ler(dados) {
     trataDados(dados)
 }
 
+function trataDados(dados) {
+    dados = JSON.parse(dados)
+    dados.forEach(valor => console.log(valor))
+}
 
 // escreve arquivo json const escreveArquivo = require('./modules/escreverPratica')   
 
