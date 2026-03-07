@@ -1,5 +1,14 @@
 const path = require('path')
 const caminho = path.resolve(__dirname, 'praticandoNode.json')
+const leArquivo = require('./modules/lerPratica')
+
+
+async function ler(dados) {
+    const dados = await leArquivo(dados)
+    trataDados(dados)
+}
+
+
 // escreve arquivo json const escreveArquivo = require('./modules/escreverPratica')   
 
 /* const dadosPessoas = [
