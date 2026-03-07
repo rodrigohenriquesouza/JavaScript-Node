@@ -1,14 +1,14 @@
 const path = require('path')
 const caminho = path.resolve(__dirname, 'praticandoNode.json')
-const escreveArquivo = require('./modules/escreverPratica')
+// escreve arquivo json const escreveArquivo = require('./modules/escreverPratica')   
 
-const dadosPessoas = [
+/* const dadosPessoas = [
     {nome: 'Julia'},
     {nome: 'Rodrigo'},
-    {nome: 'Natalia'},
+    {nome: 'Natalia'},                            - Dados ficticios
     {nome: 'Datan'}
-]
+] 
 
 const json = JSON.stringify(dadosPessoas, '', 2)
 
-escreveArquivo(caminho, json)
+escreveArquivo(caminho, json) */
