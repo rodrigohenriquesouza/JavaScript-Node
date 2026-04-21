@@ -11,7 +11,7 @@ function scriptCalculadora() {
         resultadoEnter() {
             this.display.addEventListener('keyup', (e) => {
                 if(e.keyCode === 13) {
-                    this.fazerAconta()
+                    this.fazerAconta()  
                 }
             })
         },
