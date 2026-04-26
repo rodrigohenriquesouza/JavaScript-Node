@@ -19,7 +19,7 @@ class Calculadora {
                 this.btnParaDisplay(el.innerText)
             }
 
-            if(el.classList.contains('btnc-clear')) {
+            if(el.classList.contains('btn-clear')) {
                 this.clearDisplay()
             }
         })
