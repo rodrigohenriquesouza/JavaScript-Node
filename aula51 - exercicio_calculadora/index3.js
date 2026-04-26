@@ -5,6 +5,7 @@ class Calculadora {
 
     inicia() {
         this.cliqueBotoes()
+        this.contaEnter()
     }
 
     clearDisplay() {
@@ -13,6 +14,32 @@ class Calculadora {
 
     apagaUm() {
         this.display.value = this.display.value.slice(0, -1)
+    }
+
+    contaEnter() {
+        this.display.addEventListener('keydown', e => {
+            if(e.key === 'Enter') {
+                this.fazConta()
+            }
+        })
+    }
+
+    fazConta() {
+        let conta = this.display.value
+
+        try {
+            conta = eval(conta)
+
+            if(!conta) {
+                
+                return
+            }
+
+            this.display.value = conta
+        } catch(e) {
+            alert('Conta inválida')
+            return
+        }
     }
 
     cliqueBotoes() {
@@ -28,6 +55,10 @@ class Calculadora {
             }
             if(el.classList.contains('btn-del')) {
                 this.apagaUm()
+            }
+
+            if(el.classList.contains('btn-equal')) {
+                this.fazConta()
             }
         })
     }
