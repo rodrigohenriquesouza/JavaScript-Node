@@ -11,6 +11,10 @@ class Calculadora {
         this.display.value = ''
     }
 
+    apagaUm() {
+        this.display.value = this.display.value.slice(0, -1)
+    }
+
     cliqueBotoes() {
         document.addEventListener('click', e => {
             const el = e.target
@@ -21,6 +25,9 @@ class Calculadora {
 
             if(el.classList.contains('btn-clear')) {
                 this.clearDisplay()
+            }
+            if(el.classList.contains('btn-del')) {
+                this.apagaUm()
             }
         })
     }
