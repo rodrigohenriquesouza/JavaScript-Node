@@ -7,12 +7,20 @@ class Calculadora {
         this.cliqueBotoes()
     }
 
+    clearDisplay() {
+        this.display.value = ''
+    }
+
     cliqueBotoes() {
         document.addEventListener('click', e => {
             const el = e.target
 
             if(el.classList.contains('btn-num')) {
                 this.btnParaDisplay(el.innerText)
+            }
+
+            if(el.classList.contains('btnc-clear')) {
+                this.clearDisplay()
             }
         })
     }
