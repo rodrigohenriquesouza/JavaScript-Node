@@ -14,9 +14,16 @@ class Calculadora {
             if(el.classList.contains('btn-num')) {
             this.mostraDisplay(el.innerText)
         }
+            if(el.classList.contains('btn-del')) {
+                this.apagaUm()
+            }
         })
 
         
+    }
+
+    apagaUm() {
+        this.display.value = this.display.value.slice(0, -1)
     }
 
     mostraDisplay(num) {
