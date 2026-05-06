@@ -4,18 +4,20 @@ class Calculadora {
     }
 
     iniciaCalculadora() {
-       this.pegaCliques()
+        this.pegaCliques()
     }
-
     pegaCliques() {
         document.addEventListener('click', e => {
-        const el = e.target
+            const el = e.target
 
             if(el.classList.contains('btn-num')) {
-            this.mostraDisplay(el.innerText)
-        }
+                this.mostraNoDisplay(el.innerText)
+            }
             if(el.classList.contains('btn-del')) {
-                this.apagaUm()
+                this.apagaUmNum()
+            }
+            if(el.classList.contains('btn-clear')) {
+                this.clearDisplay()
             }
             if(el.classList.contains('btn-equal')) {
                 this.fazConta(this.display.value)
@@ -23,28 +25,29 @@ class Calculadora {
         })
     }
 
-    fazConta(valor) {
+    fazConta(numero) {
         let conta
-        
+
         try {
-             conta = eval(valor)
+             conta = eval(numero)
         } catch {
-            console.log('erro')
+            console.log('ERROR, conta inválida')
             return
         }
-
         this.display.value = conta
     }
 
-    apagaUm() {
-        this.display.value = this.display.value.slice(0, -1)
+    clearDisplay() {
+        this.display.value = ''
     }
 
-    mostraDisplay(num) {
+    mostraNoDisplay(num) {
         this.display.value += num
+    }
+    apagaUmNum() {
+        this.display.value = this.display.value.slice(0, -1)
     }
 }
 
 const calculadora = new Calculadora
-
 calculadora.iniciaCalculadora()
