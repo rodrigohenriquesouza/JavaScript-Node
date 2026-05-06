@@ -17,9 +17,23 @@ class Calculadora {
             if(el.classList.contains('btn-del')) {
                 this.apagaUm()
             }
+            if(el.classList.contains('btn-equal')) {
+                this.fazConta(this.display.value)
+            }
         })
+    }
 
+    fazConta(valor) {
+        let conta
         
+        try {
+             conta = eval(valor)
+        } catch {
+            console.log('erro')
+            return
+        }
+
+        this.display.value = conta
     }
 
     apagaUm() {
