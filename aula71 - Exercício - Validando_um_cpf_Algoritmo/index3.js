@@ -2,7 +2,7 @@
 
 class ValidaCPF {
     constructor(cpf) {
-
+        Object.defineProperty('cpfLimpo')
     }
 }
 
