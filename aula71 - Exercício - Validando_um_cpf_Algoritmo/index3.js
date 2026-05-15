@@ -1,13 +1,9 @@
 // refazer exercicio validar CPF
 
-class ValidaCPF {
+class ValidarCPF {
     constructor(cpf) {
-        Object.defineProperty('cpfLimpo', p)
-    }
-    iniciaValida() {
-        
+
     }
 }
 
-const cpf = new ValidaCPF("482.085.428.30")
-cpf.iniciaValida()
+const cpf = new ValidarCPF('482.085.428.30')
