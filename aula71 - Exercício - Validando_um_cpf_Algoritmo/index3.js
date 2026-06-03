@@ -14,12 +14,21 @@ class validaUmCpf {
         return this.cpfLimpo.charAt(0).repeat(11) === this.cpfLimpo
     }
 
+    geraNovoCpf() {
+        const cpfSemDigito = this.cpfLimpo.slice(0, -2)
+        const geraDigito1 = this.geraDigito(cpfSemDigito)
+    }
+
+    geraDigito(cpfSemDigitos) {
+
+    }
+
     valida() {
         if(!this.cpfLimpo) return false
         if(typeof this.cpfLimpo !== 'string') return false
         if(this.cpfLimpo.length !== 11) return false
         if(this.verificaSequencia()) return false
-        return 'CHEGUEI AQUI'
+        if(!this.geraNovoCpf()) return false
     }
 }
 
