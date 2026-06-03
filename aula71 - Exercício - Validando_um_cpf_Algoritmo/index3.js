@@ -17,10 +17,16 @@ class validaUmCpf {
     geraNovoCpf() {
         const cpfSemDigito = this.cpfLimpo.slice(0, -2)
         const geraDigito1 = this.geraDigito(cpfSemDigito)
+        const geraDigito2 = this.geraDigito(cpfSemDigito + geraDigito1)
     }
 
     geraDigito(cpfSemDigitos) {
+        let total = 0 
+        let reverso = cpfSemDigitos.length + 1
 
+        for(let stringNumerica of cpfSemDigitos) {
+
+        }
     }
 
     valida() {
