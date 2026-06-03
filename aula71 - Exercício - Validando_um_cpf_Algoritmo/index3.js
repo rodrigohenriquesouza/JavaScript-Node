@@ -18,6 +18,7 @@ class validaUmCpf {
         const cpfSemDigito = this.cpfLimpo.slice(0, -2)
         const geraDigito1 = this.geraDigito(cpfSemDigito)
         const geraDigito2 = this.geraDigito(cpfSemDigito + geraDigito1)
+        this.novoCPF = cpfSemDigito + geraDigito1 + geraDigito2
     }
 
     geraDigito(cpfSemDigitos) {
@@ -39,6 +40,8 @@ class validaUmCpf {
         if(this.cpfLimpo.length !== 11) return false
         if(this.verificaSequencia()) return false
         if(!this.geraNovoCpf()) return false
+        this.geraNovoCpf()
+        return this.novoCPF === this.cpfLimpo
     }
 }
 
