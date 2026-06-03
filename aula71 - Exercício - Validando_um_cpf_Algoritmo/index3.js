@@ -25,8 +25,12 @@ class validaUmCpf {
         let reverso = cpfSemDigitos.length + 1
 
         for(let stringNumerica of cpfSemDigitos) {
-
+            total += reverso * Number(stringNumerica)
+            reverso--   
         }
+
+        const digito = 11 - (total % 11)
+        return digito <= 9 ? String(digito) : '0'
     }
 
     valida() {
