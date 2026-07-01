@@ -6,8 +6,12 @@ class ValidaForm {
 
     eventos() {
     this.formulario.addEventListener('submit', e => {
-        
+        this.handleSubmit(e)
     })
+    }
+    handleSubmit(evento) {
+        evento.preventDefault()
+        console.log('Formulário não enviado')
     }
 }
 
