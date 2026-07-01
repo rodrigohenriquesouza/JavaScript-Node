@@ -15,6 +15,10 @@ class ValidaForm {
     }
     checkField() {
         let valid = true
+
+        for(let campo of this.formulario.querySelectorAll('.validar')) {
+            console.log(campo)
+        }
     }
 }
 
