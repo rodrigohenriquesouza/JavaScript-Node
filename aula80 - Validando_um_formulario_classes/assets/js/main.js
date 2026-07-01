@@ -11,7 +11,10 @@ class ValidaForm {
     }
     handleSubmit(evento) {
         evento.preventDefault()
-        console.log('Formulário não enviado')
+       const checkField =  this.checkField()
+    }
+    checkField() {
+        let valid = true
     }
 }
 
