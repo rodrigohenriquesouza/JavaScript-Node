@@ -17,8 +17,17 @@ class ValidaForm {
         let valid = true
 
         for(let campo of this.formulario.querySelectorAll('.validar')) {
-            console.log(campo)
+            if(!campo.value) {
+                this.textErro(campo, 'Campo testsetse')
+                valid = false
+            }
         }
+    }
+    textErro(campo, msg) {
+        const div = document.createElement('div')
+        div.innerHTML = msg
+        div.classList.add('msg-erro')
+        campo.insertAdjacentElement('afterend', div)
     }
 }
 
