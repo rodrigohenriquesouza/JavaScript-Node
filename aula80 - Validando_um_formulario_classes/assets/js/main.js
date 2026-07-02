@@ -27,8 +27,24 @@ class ValidaForm {
                 this.textErro(campo, `${label} Não pode estar em branco`)
                 valid = false
             }
+
+            if(campo.classList.contains('cpf')) {
+                if(!this.validaCPF(campo)) valid = false
+            }
         }
     }
+
+    validaCPF(campo) {
+        const cpf = new ValidaCPF(campo.value)
+
+        if(!cpf.valid()) {
+            this.textErro(campo, 'CPF INVÁLIDO')
+            return false
+        }
+
+        return true
+    }
+
     textErro(campo, msg) {
         const div = document.createElement('div')
         div.innerHTML = msg
