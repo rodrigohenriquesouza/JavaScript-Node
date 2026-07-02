@@ -16,9 +16,15 @@ class ValidaForm {
     checkField() {
         let valid = true
 
+        for(let erroText of this.formulario.querySelectorAll('.msg-erro')) {
+            erroText.remove()
+        }
+
         for(let campo of this.formulario.querySelectorAll('.validar')) {
+            const label = campo.previousElementSibling.innerText
+
             if(!campo.value) {
-                this.textErro(campo, 'Campo testsetse')
+                this.textErro(campo, `${label} Não pode estar em branco`)
                 valid = false
             }
         }
