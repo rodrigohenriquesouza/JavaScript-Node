@@ -12,6 +12,15 @@ class ValidaForm {
     handleSubmit(evento) {
         evento.preventDefault()
        const checkField =  this.checkField()
+       const validPassword = this.validPasswords()
+    }
+
+    validPasswords() {
+        let valid = true
+        
+        const password = this.formulario.querySelector('.senha')
+        const repeatPassword = this.formulario.querySelector('.repet-senha')
+        return valid
     }
 
     checkField() {
@@ -37,6 +46,7 @@ class ValidaForm {
                 if(!this.validaUsuario(campo)) valid = false
             }
         }
+        return valid
     }
 
     validaUsuario(campo) {
