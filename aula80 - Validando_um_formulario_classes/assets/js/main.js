@@ -46,6 +46,11 @@ class ValidaForm {
             this.textErro(campo, 'Usuário precisa ter entre 3 á 12 caracteres')
             valid = false
         }
+
+        if(!usuario.match(/^[a-zA-Z0-9]+$/g)) {
+            this.textErro(campo, 'Nome de usuário deverá conter apenas letras ou números')
+            valid = false
+        }
         return valid
     }
 
