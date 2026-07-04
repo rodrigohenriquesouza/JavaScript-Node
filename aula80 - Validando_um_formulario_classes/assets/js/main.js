@@ -13,6 +13,11 @@ class ValidaForm {
         evento.preventDefault()
        const checkField =  this.checkField()
        const validPassword = this.validPasswords()
+
+       if(checkField && validPassword) {
+        alert('form enviado')
+        this.formulario.submit()
+       }
     }
 
     validPasswords() {
@@ -20,6 +25,18 @@ class ValidaForm {
         
         const password = this.formulario.querySelector('.senha')
         const repeatPassword = this.formulario.querySelector('.repet-senha')
+
+        if(password.value !== repeatPassword.value) {
+            this.textErro(password, 'Campos senha e repetir senha precisam ser iguais')
+            this.textErro(repeatPassword, 'Campos senha e repetir senha precisam ser iguais')
+            valid = false
+        }
+
+        if(password.value.length < 6 || password.value.length > 12) {
+            this.textErro(password, 'Senha precisa estar entre 6 a 12 caracteres')
+            valid = false
+        }
+
         return valid
     }
 
