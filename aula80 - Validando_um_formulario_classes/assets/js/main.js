@@ -37,7 +37,7 @@ class ValidaForm {
     validaCPF(campo) {
         const cpf = new ValidaCPF(campo.value)
 
-        if(!cpf.valid()) {
+        if(!cpf.valida()) {
             this.textErro(campo, 'CPF INVÁLIDO')
             return false
         }
