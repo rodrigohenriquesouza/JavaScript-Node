@@ -4,6 +4,11 @@ class ValidaForm {
     }
 
     eventos() {
+        this.formulario.addEventListener('submit', e => {
+            e.preventDefault()
+        })
         this.handleEvent()
     }
+
+
 }
