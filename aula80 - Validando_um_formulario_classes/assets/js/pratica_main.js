@@ -1,18 +1,11 @@
-class ValidaForm {
+class FormValid {
     constructor() {
-        this.formulario = document.querySelector('.form')
+        this.eventos()
     }
 
     eventos() {
-        this.formulario.addEventListener('submit', e => {
-            this.handleSubmit(e)
-        })
-        this.handleEvent()
+
     }
-
-    handleSubmit() {
-        
-    }
-
-
 }
+
+const valid = new FormValid()
