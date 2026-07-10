@@ -19,8 +19,10 @@ class FormValid {
         let valid = true
 
         for(let field of this.formulario.querySelectorAll('.test')) {
+            let label = field.previousElementSibling.innerText
+
             if(!field.value) {
-                this.throwError(field, 'Msg erro')
+                this.throwError(field, `Msg erro ${label}`)
                 valid = false
             }
         }
