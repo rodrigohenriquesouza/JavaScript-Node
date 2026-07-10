@@ -12,7 +12,15 @@ class FormValid {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log('Formulario não enviado')
+        const fieldChecked = this.fieldCheked()
+    }
+
+    fieldChecked() {
+        let valid = true
+
+        for(let field of this.formulario.querySelectorAll('.test')) {
+            
+        }
     }
 }
 
