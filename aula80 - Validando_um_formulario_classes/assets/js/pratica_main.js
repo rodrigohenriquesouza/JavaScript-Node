@@ -1,10 +1,18 @@
 class FormValid {
     constructor() {
-        this.eventos()
+        this.formulario = document.querySelector('.formulario')
+        this.events()
     }
 
-    eventos() {
+    events() {
+        this.formulario.addEventListener('submit', e => {
+            this.handleSubmit(e)
+        })
+    }
 
+    handleSubmit(e) {
+        e.preventDefault()
+        console.log('Formulario não enviado')
     }
 }
 
