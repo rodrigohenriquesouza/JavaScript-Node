@@ -33,6 +33,10 @@ class FormValid {
             if(field.classList.contains('cpf')) {
                 if(!this.validCpf(field)) valid = false
             }
+
+            if(field.classList.contains('usuario')) {
+                if(!this.validUser(field)) valid = false
+            }
         }
   }
 
