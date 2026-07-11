@@ -40,6 +40,15 @@ class FormValid {
         }
   }
 
+  validUser(field) {
+    const fieldusu = field.value
+    let valid = true
+    if(fieldusu.length < 3 || fieldusu.length > 12) {
+        this.throwError(field, 'Usuario precisa ter entre 3 e 12 caracteres')
+        valid = false
+    }
+  }
+
   validCpf(field) {
     const cpf = new ValidaCPF(field.value)
 
