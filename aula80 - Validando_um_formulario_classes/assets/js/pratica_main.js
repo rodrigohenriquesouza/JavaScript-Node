@@ -47,6 +47,12 @@ class FormValid {
         this.throwError(field, 'Usuario precisa ter entre 3 e 12 caracteres')
         valid = false
     }
+
+    if(!fieldusu.match(/^[a-zA-Z0-9]+$/g)) {
+        this.throwError(field, 'Nome de usuário deverá conter apenas letras ou números')
+        valid = false
+    }
+    return valid
   }
 
   validCpf(field) {
