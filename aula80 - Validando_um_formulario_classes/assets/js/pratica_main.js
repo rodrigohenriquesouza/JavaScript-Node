@@ -39,6 +39,12 @@ class FormValid {
             }
         }
   }
+  
+
+  validPassword() {
+
+    
+  }
 
   validUser(field) {
     const fieldusu = field.value
