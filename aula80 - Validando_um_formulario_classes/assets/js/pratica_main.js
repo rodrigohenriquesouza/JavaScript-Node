@@ -42,8 +42,8 @@ class FormValid {
   
 
   validPassword() {
+    const password = this.formulario.querySelector('.senha')
 
-    
   }
 
   validUser(field) {
